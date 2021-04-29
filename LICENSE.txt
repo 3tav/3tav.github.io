@@ -1,0 +1,5 @@
+/* Copyright 3 Tav d.o.o., Novo mesto, Slovenija - All Rights Reserved
+ * Unauthorized copying of this repository and its contents, via any medium is strictly prohibited
+ * All content, including 3rd party contributions, are proprietary and confidential
+ * Written by <podpora@3tav.si>, January 2021
+ */
