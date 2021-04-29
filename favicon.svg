@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="color_positive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#tav_1_);}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="110.5187" y1="512" x2="218.2838" y2="512">
+	<stop  offset="0" style="stop-color:#434CCA"/>
+	<stop  offset="1" style="stop-color:#4315CA"/>
+</linearGradient>
+<path class="st0" d="M164.4,458.1c29.8,0,53.9,24.1,53.9,53.9s-24.1,53.9-53.9,53.9s-53.9-24.1-53.9-53.9
+	C110.5,482.2,134.6,458.1,164.4,458.1z M110.5,309.9c0,29.8,24.1,53.9,53.9,53.9s53.9-24.1,53.9-53.9s-24.1-53.9-53.9-53.9
+	S110.5,280.1,110.5,309.9z M110.5,714.1c0,29.8,24.1,53.9,53.9,53.9s53.9-24.1,53.9-53.9s-24.1-53.9-53.9-53.9
+	S110.5,684.3,110.5,714.1z"/>
+<linearGradient id="tav_1_" gradientUnits="userSpaceOnUse" x1="325.8475" y1="512" x2="913.4813" y2="512">
+	<stop  offset="0" style="stop-color:#434CCA"/>
+	<stop  offset="1" style="stop-color:#4315CA"/>
+</linearGradient>
+<path id="tav_4_" class="st1" d="M325.8,256v92.6h159.8c3.1,99.8,4.1,197.5,4.1,276.9c0,34.6-14.2,46.8-39.7,46.8
+	c-17.3,0-33.6-3.1-52.9-8.1l-16.3,88.6c26.5,8.1,60.1,15.3,97.7,15.3c91.6,0,122.1-56,122.1-148.6V348.6h73.7l43.6,0
+	c55,0,78.4,38.7,78.4,121.1V768h117.1V454.5c0-126.2-46.8-198.5-153.7-198.5H325.8z"/>
+</svg>
