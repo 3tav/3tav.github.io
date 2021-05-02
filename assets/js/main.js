@@ -1,1 +1,20 @@
-function resizeMenu(n,e){n.scrollTop()>$(".header-top").outerHeight(!0)?e.addClass("f-nav").css({position:"fixed",background:"#fff",zIndex:100}):e.removeClass("f-nav").css({position:"static",zIndex:0})}$("document").ready(function(n){var e=n(".header-top");n("#menu-trigger").on("click",function(){n(".main-menu").slideToggle()}),n(window).scroll(function(){resizeMenu(n(this),e)}),n(".submenus-button").on("click",function(){n(".submenus").slideToggle()})});
+var callback = function () {
+  var headerTop = document.getElementsByClassName("header-top")[0];
+  var menuTrigger = headerTop.getElementsByClassName("menu-trigger")[0];
+  var mainMenu = document.getElementsByClassName("main-menu")[0];
+  menuTrigger.addEventListener("click", function () {
+    if (mainMenu.style.getPropertyValue("display") === "block") {
+      mainMenu.style.setProperty("display", "none")
+    } else {
+      mainMenu.style.setProperty("display", "block")
+    }
+  })
+}
+if (
+  document.readyState === "complete" ||
+  (document.readyState !== "loading" && !document.documentElement.doScroll)
+) {
+  callback()
+} else {
+  document.addEventListener("DOMContentLoaded", callback)
+}
