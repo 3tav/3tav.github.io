@@ -1,0 +1,13 @@
+/* Copyright 3 Tav d.o.o., Novo mesto, Slovenija - All Rights Reserved
+* Unauthorized copying of this repository and its contents, via any medium is strictly prohibited
+* All content, including 3rd party contributions, are proprietary and confidential
+* Written by <podpora@3tav.si>, January 2021
+*/
+
+PRIVACY POLICY FOR APPLICATION PUBLISHED ON GOOGLE PLAY STORE (TM) BY 3 TAV PUBLISHER
+
+ALL REQUIRED APP PERMISSIONS THAT REQUIRE USER AND DEVICE SENSITIVE DATA RESPECT THE FOLOWING POLICY:
+
+NO USER DATA IS USED OR STORED OR PROCESSESED.
+
+NO DEVICE DATA IS STORED OR PROCESSED EXCEPT THE DATA THAT IS NECCESSARY TO RUN THE APPLICATION.
