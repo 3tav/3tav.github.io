@@ -1,0 +1,17 @@
+/* 3 TAV MOBILE APPS - PERSONAL CONTENT REMOVAL REQUEST POLICY
+* Copyright 3 Tav d.o.o., Novo mesto, Slovenija - All Rights Reserved
+* Written by <podpora@3tav.si>, 2023
+*/
+
+This Policy refers to apps published on Google Play by the Publisher "3 Tav d.o.o"
+https://play.google.com/store/apps/dev?id=7565091158497030448
+
+A. DATA COLLECTED BY THE APP
+
+- username and password
+
+B. REMOVAL REQUEST
+
+A user that wishes that their account and associated data be deleted can send an e-mail
+with that request to <podpora@3tav.si>. The request will be processed in 30 days and after
+verification process is completed the data will be deleted.
