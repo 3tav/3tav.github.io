@@ -1,10 +1,22 @@
 {
   "name": "3tav.github.io",
-  "packageManager": "yarn@3.6.1",
+  "version": "1.0.0",
+  "description": "This is a static web export from our headless CMS [Wordpress](https://wordpress.org/), using [Staatic plugin](https://staatic.com/) and deployed on [Netlify](https://www.netlify.com/).",
+  "main": "index.js",
   "dependencies": {
     "replace-in-file": "^7.1.0"
   },
   "scripts": {
     "build": "node index.js"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3tav/3tav.github.io.git"
+  },
+  "author": "3 TAV",
+  "license": "EUPL-1.1",
+  "bugs": {
+    "url": "https://github.com/3tav/3tav.github.io/issues"
+  },
+  "homepage": "https://github.com/3tav/3tav.github.io#readme"
 }

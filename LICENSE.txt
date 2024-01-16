@@ -1,0 +1,13 @@
+/*
+* Avtorske pravice 2024, 3 TAV d.o.o.
+*
+* Licenca, dodeljena na podlagi EUPL, različica 1.1 – ali poznejše različice EUPL, takoj ko jih odobri Evropska komisija („licenca“);
+* to delo lahko uporabljate le v skladu z licenco.
+* Kopijo licence lahko dobite na naslovu:
+*
+* https://joinup.ec.europa.eu/software/page/eupl5.
+*
+* Razen če pravo, ki se uporablja, tega ne zahteva ali ni pisno dogovorjeno, se programska oprema, distribuirana v okviru licence, distribuira po načelu „videno kupljeno“,
+* BREZ JAMSTEV ALI KAKRŠNIH KOLI POGOJEV, niti izrecnih ali implicitnih.
+* Za dovoljenja in omejitve v posameznem jeziku v okviru licence glej licenco.
+*/
