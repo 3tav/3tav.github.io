@@ -4,3 +4,4 @@
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 *.svg filter=lfs diff=lfs merge=lfs -text
 *.woff filter=lfs diff=lfs merge=lfs -text
+publication/wp-content/uploads-bkp/staatic/staging/wp-content/uploads/** filter=lfs diff=lfs merge=lfs -text
