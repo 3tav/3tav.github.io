@@ -14,7 +14,7 @@ Wordpress is hosted on a private cloud with a `.local` domain. Homepage is expor
 
 ```sh
 cd deploy
-rsync -av --ignore-existing --exclude=".*" . ~/3tav.github.io/publication
+rsync -av --ignore-existing --exclude=".*" --exclude="*.php" --exclude="*_gzip" --exclude="*.mo" --exclude="*.po" . ~/3tav.github.io/publication
 ```
 
 🎈 Default export of `Staatic` plugin is without media files (faster export - The option "Symlink/Copy Uploads" in [Staatic/Deployment](http://sl_wordpress.dockerserver.3tav.local/wp-admin/admin.php?page=staatic-settings&group=staatic-deployment) is selected).
