@@ -9,10 +9,22 @@ Wordpress is hosted on a private cloud with a `.local` domain. Homepage is expor
 ### 1. Export Wordpress instalation to static files
 
 - Login in [Wordpress admin > Staatic](http://sl_wordpress.dockerserver.3tav.local/wp-admin/admin.php?page=staatic-publications), select **Publish now**, and wait ...
-- Download *Active Publication* and `unzip` it
-- Copy contents to this repo and place them in the `/publication` folder (overwrite existing) 🎈
+- Download *Active Publication* export and `unzip` it to folder `deploy`
+- Copy contents of the `deploy` folder to the `/publication` folder (overwrite existing) 🎈
 
-> 🎈 If option "Symlink/Copy Uploads" in [Staatic/Deployment](http://sl_wordpress.dockerserver.3tav.local/wp-admin/admin.php?page=staatic-settings&group=staatic-deployment) is selected, also copy all new media files manually from the server to `publiaction/wp-content/uploads` folder. Use folder compare tool, `rsync` etc. Especially, dont't forget to sync `publiaction/wp-content/uploads/elementor/css/*` files.
+```sh
+cd deploy
+rsync -av --ignore-existing --exclude=".*" . ~/3tav.github.io/publication
+```
+
+🎈 Default export of `Staatic` plugin is without media files (faster export - The option "Symlink/Copy Uploads" in [Staatic/Deployment](http://sl_wordpress.dockerserver.3tav.local/wp-admin/admin.php?page=staatic-settings&group=staatic-deployment) is selected).
+
+-> Copy all new media files (`wp-content`) manually from the server to `publiaction/wp-content` folder. Use folder compare tool, `rsync` etc.
+
+```sh
+cd publication
+rsync -av --ignore-existing --exclude=".*" tritav@dockerserver:/shared/docker/company_homepage/sl_wordpress/wp-content/ ./publication/.
+```
 
 ### 2. Test and post-process exported files (optional)
 

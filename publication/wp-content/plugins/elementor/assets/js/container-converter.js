@@ -1,4 +1,4 @@
-/*! elementor - v3.18.0 - 20-12-2023 */
+/*! elementor - v3.11.5 - 14-03-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -360,8 +360,6 @@ var map = function map() {
     var deviceKey = (0, _utils.getDeviceKey)('flex_gap', breakpoint);
     var newValue = {
       size: deviceValue,
-      column: '' + deviceValue,
-      row: '' + deviceValue,
       unit: 'px'
     };
     return [deviceKey, newValue];
@@ -439,8 +437,6 @@ var map = function map(_ref) {
       };
       value = 'custom' === value ? sectionSettings.gap_columns_custom : {
         size: sizesMap[value],
-        column: '' + sizesMap[value],
-        row: '' + sizesMap[value],
         unit: 'px'
       };
       return ['flex_gap', value];
@@ -570,6 +566,12 @@ var Migrator = /*#__PURE__*/function () {
     key: "migrate",
     value:
     /**
+     * Migrations configuration by `elType`.
+     *
+     * @type {Object}
+     */
+
+    /**
      * Migrate element settings into new settings object, using a map object.
      *
      * @param {Object} settings - Settings to migrate.
@@ -660,11 +662,6 @@ var Migrator = /*#__PURE__*/function () {
   return Migrator;
 }();
 exports["default"] = Migrator;
-/**
- * Migrations configuration by `elType`.
- *
- * @type {Object}
- */
 (0, _defineProperty2.default)(Migrator, "config", {
   section: {
     legacyControlsMapping: _section.default,
@@ -677,8 +674,6 @@ exports["default"] = Migrator;
         flex_align_items: settings.flex_align_items || 'stretch',
         flex_gap: settings.flex_gap || {
           size: 10,
-          column: '10',
-          row: '10',
           unit: 'px'
         }
       }, isInner ? {
@@ -717,7 +712,9 @@ module.exports = wp.i18n;
 
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
   return arr2;
 }
 module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -912,31 +909,33 @@ module.exports = _iterableToArray, module.exports.__esModule = true, module.expo
   \**********************************************************************/
 /***/ ((module) => {
 
-function _iterableToArrayLimit(r, l) {
-  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
-  if (null != t) {
-    var e,
-      n,
-      i,
-      u,
-      a = [],
-      f = !0,
-      o = !1;
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
     try {
-      if (i = (t = t.call(r)).next, 0 === l) {
-        if (Object(t) !== t) return;
-        f = !1;
-      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
-    } catch (r) {
-      o = !0, n = r;
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0) {
+        ;
+      }
+    } catch (err) {
+      _d = !0, _e = err;
     } finally {
       try {
-        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
       } finally {
-        if (o) throw n;
+        if (_d) throw _e;
       }
     }
-    return a;
+    return _arr;
   }
 }
 module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -1083,14 +1082,14 @@ module.exports = _toPropertyKey, module.exports.__esModule = true, module.export
   \********************************************************/
 /***/ ((module) => {
 
-function _typeof(o) {
+function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 

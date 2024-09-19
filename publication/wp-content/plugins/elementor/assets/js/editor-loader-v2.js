@@ -1,13 +1,13 @@
-/*! elementor - v3.18.0 - 20-12-2023 */
+/*! elementor - v3.11.5 - 14-03-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-/*!*******************************************************!*\
-  !*** ../core/editor/loader/v2/js/editor-loader-v2.js ***!
-  \*******************************************************/
+/*!****************************************************!*\
+  !*** ../core/editor/assets/js/editor-loader-v2.js ***!
+  \****************************************************/
 
 
-var _window$elementorV;
+var _window$__UNSTABLE__e;
 window.__elementorEditorV1LoadingPromise = new Promise(function (resolve) {
   window.addEventListener('elementor/init', function () {
     resolve();
@@ -16,10 +16,10 @@ window.__elementorEditorV1LoadingPromise = new Promise(function (resolve) {
   });
 });
 window.elementor.start();
-if (!((_window$elementorV = window.elementorV2) !== null && _window$elementorV !== void 0 && _window$elementorV.editor)) {
+if (!((_window$__UNSTABLE__e = window.__UNSTABLE__elementorPackages) !== null && _window$__UNSTABLE__e !== void 0 && _window$__UNSTABLE__e.editor)) {
   throw new Error('The "@elementor/editor" package was not loaded.');
 }
-window.elementorV2.editor.init(document.getElementById('elementor-editor-wrapper-v2'));
+window.__UNSTABLE__elementorPackages.editor.init(document.getElementById('elementor-editor-wrapper-v2'));
 /******/ })()
 ;
 //# sourceMappingURL=editor-loader-v2.js.map

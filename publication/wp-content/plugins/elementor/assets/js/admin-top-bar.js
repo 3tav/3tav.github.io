@@ -1,4 +1,4 @@
-/*! elementor - v3.18.0 - 20-12-2023 */
+/*! elementor - v3.11.5 - 14-03-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -39,9 +39,7 @@ var matchUserAgent = function matchUserAgent(UserAgentStr) {
   isBlink = matchUserAgent('Chrome') && !!window.CSS,
   // Apple Webkit engine
   isAppleWebkit = matchUserAgent('AppleWebKit') && !isBlink,
-  isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
   environment = {
-    isTouchDevice: isTouchDevice,
     appleWebkit: isAppleWebkit,
     blink: isBlink,
     chrome: isChrome,
@@ -104,7 +102,7 @@ function AdminTopBar() {
   var finderAction = function finderAction() {
     $e.route('finder');
   };
-  var controlSign = _environment.default.mac ? "\u2318" : '^';
+  var controlSign = _environment.default.mac ? '&#8984;' : '^';
   var finderTooltipText = __('Search or do anything in Elementor', 'elementor') + " ".concat(controlSign, "+E");
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "e-admin-top-bar"
@@ -117,10 +115,7 @@ function AdminTopBar() {
     className: "e-admin-top-bar__secondary-area"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "e-admin-top-bar__secondary-area-buttons"
-  }, /*#__PURE__*/_react.default.createElement(_barButton.default, {
-    href: window.elementorAdminTopBarConfig.apps_url,
-    icon: "eicon-integration"
-  }, __('Apps', 'elementor')), window.elementorAdminTopBarConfig.is_administrator ? /*#__PURE__*/_react.default.createElement(_barButton.default, {
+  }, window.elementorAdminTopBarConfig.is_administrator ? /*#__PURE__*/_react.default.createElement(_barButton.default, {
     onClick: finderAction,
     dataInfo: finderTooltipText,
     icon: "eicon-search-bold"
@@ -171,7 +166,7 @@ function BarButton(props) {
     target: props.target
   }, /*#__PURE__*/_react.default.createElement("i", {
     className: "e-admin-top-bar__bar-button-icon ".concat(props.icon)
-  }), /*#__PURE__*/_react.default.createElement("span", {
+  }), /*#__PURE__*/_react.default.createElement("h1", {
     className: "e-admin-top-bar__bar-button-title"
   }, props.children));
 }
@@ -207,11 +202,11 @@ function BarHeading(props) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "e-admin-top-bar__heading"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "e-logo-wrapper"
+    className: "e-admin-top-bar__heading-logo"
   }, /*#__PURE__*/_react.default.createElement("i", {
     className: "eicon-elementor",
     "aria-hidden": "true"
-  })), /*#__PURE__*/_react.default.createElement("span", {
+  })), /*#__PURE__*/_react.default.createElement("h1", {
     className: "e-admin-top-bar__heading-title"
   }, props.children));
 }
@@ -1449,7 +1444,9 @@ module.exports = wp.i18n;
 
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
   return arr2;
 }
 module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -1490,31 +1487,33 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
   \**********************************************************************/
 /***/ ((module) => {
 
-function _iterableToArrayLimit(r, l) {
-  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
-  if (null != t) {
-    var e,
-      n,
-      i,
-      u,
-      a = [],
-      f = !0,
-      o = !1;
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
     try {
-      if (i = (t = t.call(r)).next, 0 === l) {
-        if (Object(t) !== t) return;
-        f = !1;
-      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
-    } catch (r) {
-      o = !0, n = r;
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0) {
+        ;
+      }
+    } catch (err) {
+      _d = !0, _e = err;
     } finally {
       try {
-        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
       } finally {
-        if (o) throw n;
+        if (_d) throw _e;
       }
     }
-    return a;
+    return _arr;
   }
 }
 module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -1557,14 +1556,14 @@ module.exports = _slicedToArray, module.exports.__esModule = true, module.export
   \********************************************************/
 /***/ ((module) => {
 
-function _typeof(o) {
+function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -1631,7 +1630,14 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 var _adminTopBar = _interopRequireDefault(__webpack_require__(/*! ./admin-top-bar */ "../modules/admin-top-bar/assets/js/admin-top-bar.js"));
 var AppWrapper = elementorCommon.config.isDebug ? _react.default.StrictMode : _react.default.Fragment;
 var adminTopBarElement = document.getElementById('e-admin-top-bar-root');
-ReactDOM.render( /*#__PURE__*/_react.default.createElement(AppWrapper, null, /*#__PURE__*/_react.default.createElement(_adminTopBar.default, null)), adminTopBarElement);
+var elementorMenuItemIds = ['toplevel_page_elementor', 'menu-posts-elementor_library'];
+var menuItemSelector = elementorMenuItemIds.map(function (itemId) {
+  return "#".concat(itemId, " .wp-menu-open");
+}).join(', ');
+var isElementorPage = !!document.querySelector(menuItemSelector);
+if (isElementorPage) {
+  ReactDOM.render( /*#__PURE__*/_react.default.createElement(AppWrapper, null, /*#__PURE__*/_react.default.createElement(_adminTopBar.default, null)), adminTopBarElement);
+}
 })();
 
 /******/ })()
