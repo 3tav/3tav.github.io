@@ -1,0 +1,106 @@
+.thsn-portfolio-style-2 .themesion-post-content{
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 0;
+}
+.thsn-portfolio-style-2 img {
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    transition: all ease 400ms;
+    -moz-transition: all ease 400ms;
+    -webkit-transition: all ease 400ms;
+}
+.thsn-portfolio-style-2:hover img {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.thsn-portfolio-style-2 .themesion-box-content .themesion-titlebox{ 
+    display: inline-block;
+    width: calc(100% - 80px);
+}
+.thsn-portfolio-style-2 .themesion-box-content .thsn-portfolio-title{
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.thsn-portfolio-style-2 .themesion-box-content .thsn-port-cat a{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--thsn-grevo-global-color);
+}
+.thsn-portfolio-style-2 .themesion-box-content .thsn-portfolio-title a{
+    color: #fff;
+}
+.thsn-portfolio-style-2 .themesion-icon-box a{
+    color: #fff;
+}
+.thsn-portfolio-style-1 .themesion-icon-box a>i:before{
+    font-weight: 700;
+}
+.thsn-portfolio-style-2 .themesion-icon-box {
+    width: 40px;
+    height: 40px;
+    float: right;
+    font-size: 18px;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: var(--thsn-grevo-global-color);
+    display: inline-block;
+    text-align: center;
+}
+.thsn-portfolio-style-2 .themesion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    text-align: left;
+    padding: 30px 40px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    opacity: 0;
+    visibility: hidden;
+    background: -moz-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    transition: all ease 700ms;
+    -moz-transition: all ease 700ms;
+    -webkit-transition: all ease 700ms;
+    -o-transition: all ease 700ms;
+}
+.thsn-portfolio-style-2:hover .themesion-overlay{
+    opacity: 1;
+    visibility: visible;
+}
+.thsn-portfolio-style-2 .themesion-box-content-wrapper {
+    position: absolute;
+    left: 0px;
+    bottom: 30px;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-right: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease 900ms;
+    -moz-transition: all ease 900ms;
+    -webkit-transition: all ease 900ms;
+    -o-transition: all ease 900ms;
+}
+.thsn-portfolio-style-2:hover .themesion-box-content-wrapper {
+    visibility: visible;
+    opacity: 1;
+    left: 25px;
+}

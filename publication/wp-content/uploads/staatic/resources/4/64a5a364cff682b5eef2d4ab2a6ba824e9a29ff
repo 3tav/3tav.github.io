@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>3 TAV</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Informacijske rešitve za učinkovito vodenje podjetja</description>
+	<lastBuildDate>Mon, 10 Jul 2023 10:58:14 +0000</lastBuildDate>
+	<language>sl-SI</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>Potrebujete pomoč za izdelavo API vmesnika za razpis ZPGOPEK (SPIRIT Slovenija)?</title>
+		<link>/api-vmesnik-za-spirit/</link>
+		
+		<dc:creator><![CDATA[skrbnik]]></dc:creator>
+		<pubDate>Tue, 04 Jul 2023 10:00:42 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<category><![CDATA[API]]></category>
+		<category><![CDATA[Spirit]]></category>
+		<category><![CDATA[ZPGOPEK]]></category>
+		<guid isPermaLink="false">/?p=2438</guid>
+
+					<description><![CDATA[Izdelava programskega vmesnika (API) za potrebe poročanja za razpis SPIRIT Slovenija - "Pomoč podjetjem zaradi visokih cen energentov v 2023 na podlagi Zakona o pomoči gospodarstvu za omilitev posledic energetske krize (ZPGOPEK)"]]></description>
+										<content:encoded><![CDATA[
+<p>Agencija <strong><a href="https://www.spiritslovenia.si" data-type="URL" data-id="https://www.spiritslovenia.si" target="_blank" rel="noopener">SPIRIT Slovenija</a></strong> v okviru razpisa <em><a href="https://www.spiritslovenia.si/razpis/397" target="_blank" rel="noopener">Pomoč podjetjem zaradi visokih cen energentov v 2023 na podlagi Zakona o pomoči gospodarstvu za omilitev posledic energetske krize (ZPGOPEK)</a></em> nalaga operaterjem in dobaviteljem, da omogočijo elektronsko izmenjavo podatkov  o porabi energentov, skladno z zahtevami razpisa in tehničnimi navodili.</p>
+
+
+
+<span id="more-2438"></span>
+
+
+
+<h3 class="wp-block-heading">Za pomoč pri izdelavi programskega vmesnika (API) se lahko obrnete na 3 TAV</h3>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>Če želite, da za vas pripravimo vse potrebno glede API vmesnika, nam pišite na <a href="mailto:prodaja@3tav.si"><strong>prodaja@3tav.si</strong></a> in poslali vam bomo ponudbo.</p>
+</blockquote>
+
+
+
+<p>V okviru naše rešitve vam nudimo:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>izdelavo</strong> API v skladu s <a href="https://zpgopek-api.spiritslovenia.eu/swagger/index.html" target="_blank" rel="noopener"><em>smernicami SPIRIT Slovenija</em></a>,</li>
+
+
+
+<li><strong>uvoz</strong> produkcijskih podatkov (1. sklop do 31. 7. 2023 in 2. sklop do 31. 1. 2024),</li>
+
+
+
+<li><strong>gostovanje</strong> API-ja na infrastrukturi <em>3TAV Cloud</em> do 28. 2. 2024 (vključuje: dodelitev lastne poddomene *.3tav.si, visoka razpoložljivost, monitoring dostopa),</li>
+
+
+
+<li>izvedba v roku do 31. 7. 2023.</li>
+</ul>
+
+
+
+<p>Obveznosti naročnika:</p>
+
+
+
+<ul class="wp-block-list">
+<li>priprava datoteke s produkcijskimi podatki za obdobje 1. 1. 2023 &#8211; 30. 6. 2023, 2021 in po potrebi 2019; najkasneje do 20. 7. 2023,</li>
+
+
+
+<li>priprava datoteke s produkcijskimi podatki za obdobje 1. 7. 2023 &#8211; 31. 12. 2023.</li>
+</ul>
+
+
+
+<p>Potek izdelave vmesnika:</p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>pripravite svoje podatke</strong> v Excel razpredelnici (na voljo vam je Excel predloga),</li>
+
+
+
+<li><strong>pošljite</strong> Excel datoteko na naš e-naslov,</li>
+
+
+
+<li>sporočimo vam podatke o vašem API vmesniku, ki jih morate posredovati na SPIRIT Slovenija.</li>
+</ol>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h3 class="wp-block-heading">Podrobneje o razpisu &#8211; ZPGOPEK</h3>
+
+
+
+<p>Dne 28. 12. 2022 je stopil v veljavo <a href="http://www.pisrs.si/Pis.web/pregledPredpisa?id=ZAKO8737" target="_blank" rel="noopener"><em>ZPGOPEK</em></a>, ki upravičencem omogoča subvencioniranje povišanih stroškov za energente v letu 2023. Upravičenci pomoč za gospodarstvo uveljavljajo z <a href="https://www.spiritslovenia.si/razpis/397" target="_blank" rel="noopener"><em>vlogo na javni agenciji SPIRIT Slovenija</em></a>.</p>
+
+
+
+<h4 class="wp-block-heading">Elektronska izmenjava podatkov preko aplikacijskega vmesnika (API)</h4>
+
+
+
+<p>Operaterji in dobavitelji morajo skladno s šestim odstavkom 16. člena ZPGOPEK imeti objavljen in dostopen preverjeno pravilno delujoč API.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Rok za izdelavo</strong> API vmesnika je <strong>31. julij 2023</strong>.</li>
+
+
+
+<li><a href="https://zpgopek-api.spiritslovenia.eu/swagger/index.html" target="_blank" rel="noopener"><strong>Tehnična navodila</strong> (specifikacija Swagger)</a></li>
+</ul>
+
+
+
+<p>Podrobnosti o tej zahtevi si preberite na spletni strani razpisa, v okvirčku <em><a href="https://www.spiritslovenia.si/razpis/397" target="_blank" rel="noopener">Informacije za operaterje in dobavitelje ter posredne dobavitelje ZPGOPEK</a></em>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>3 TAV član Kluba slovenskih podjetnikov</title>
+		<link>/3-tav-clan-kluba-slovenskih-podjetnikov/</link>
+		
+		<dc:creator><![CDATA[skrbnik]]></dc:creator>
+		<pubDate>Tue, 20 Jun 2023 05:38:20 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">/?p=2420</guid>
+
+					<description><![CDATA[Klub slovenskih podjetnikov je v drugi številki svoje nove revije predstavil tudi naše podjetja. Med drugim naš direktor Ludvik Ilovar odgovarja, zakaj smo se pridružili klubu: »Največ zaradi časa, v katerem živimo. V nekem trenutku sem spoznal, da je vsak zase preveč ranljiv. Klub slovenskih podjetnikov (SBC) je odlično okolje, kjer si lahko izmenjamo izkušnje, skupaj rastemo in združeni nastopamo tudi na večjih trgih, kot je Slovenija. To nam lahko[&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Klub slovenskih podjetnikov je v drugi številki svoje nove revije predstavil tudi naše podjetja.</p>
+
+
+
+<p>Med drugim naš direktor <strong>Ludvik Ilovar</strong> odgovarja, zakaj smo se pridružili klubu:</p>
+
+
+
+<p>»Največ zaradi časa, v katerem živimo. V nekem trenutku sem spoznal, da je vsak zase preveč ranljiv. <a rel="noreferrer noopener" href="https://www.sbc.si/" target="_blank"><strong>Klub slovenskih podjetnikov</strong></a> (SBC) je odlično okolje, kjer si lahko izmenjamo izkušnje, skupaj rastemo in združeni nastopamo tudi na večjih trgih, kot je Slovenija. To nam lahko zagotovi večjo stabilnost in razvoj podjetja.«</p>
+
+
+
+<span id="more-2420"></span>
+
+
+
+<p>Več pa si preberite v <a href="https://www.sbc.si/novice/2023/06/izsla-je-poletna-stevilka-magazina-sbc" target="_blank" rel="noreferrer noopener"><strong>poletni številki magazina SBC 2023</strong></a>. </p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Velepodatki, poslovna in podatkovna analitika</title>
+		<link>/velepodatki-poslovna-in-podatkovna-analitika/</link>
+		
+		<dc:creator><![CDATA[skrbnik]]></dc:creator>
+		<pubDate>Wed, 21 Sep 2022 09:04:08 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www.3tav.si/?p=1726</guid>
+
+					<description><![CDATA[Kakšna je razlika med velepodatki in poslovno analitiko? Kako se oboje združuje v podatkovno analitiko? Velepodatki se nanašajo na obsežne množice informacij, ki običajno obstajajo v organizacijah. Po drugi strani pa jih poslovna analitika uporablja za razumevanje in predvidevanje poslovnih dogodkov ter nato sprejemanje pravilnih poslovnih odločitev.]]></description>
+										<content:encoded><![CDATA[<p><em>Kakšna je razlika med velepodatki in poslovno analitiko? Kako se oboje združuje v podatkovno analitiko? Velepodatki se nanašajo na obsežne množice informacij, ki običajno obstajajo v organizacijah. Po drugi strani pa jih poslovna analitika uporablja za razumevanje in predvidevanje poslovnih dogodkov ter nato sprejemanje pravilnih poslovnih odločitev.</em></p>
+<p>Obe področji igrata v zadnjem času v poslovnem svetu vedno večjo vlogo, zato v nadaljevanju predstavljamo razlike med njima, kako se uporabljata v organizacijah, kakšni sta njuni prednosti za mala in srednja podjetja ter kako oba ta svetova združujemo v enoten sistem podatkovne analitike.<span id="more-1726"></span></p>
+<h3>Velepodatki</h3>
+<p>Velepodatki so vse informacije, ki jih podjetja shranjujejo &#8211; običajno v velikih podatkovnih strukturiranih in nestrukturiranih zbirkah. Vendar več kot je v sistemu pridobljenih informacij, težje tudi iz celotne množice izluščimo koristne informacije.</p>
+<p>Velepodatki se ustvarjajo iz različnih vrst meritev, statistike uporabe spletnih portalov, družbenih omrežij ipd. Vse te informacije skupaj, ki so pridobljene v nekem časovnem obdobju, predstavljajo množične podatke. Če je njihova struktura vnaprej predvidljiva, se navadno shranjujejo v strukturirani obliki &#8211; na primer količinski podatki o meritvah porabe vode ali drugih storitev, finančne transakcije in podobno. Nestrukturirani podatki pa so informacije, kot so besedila e-poštnih sporočil, slike ali senzorski podatki, pri katerih se atributi poljubno dodajajo glede na vrsto naprave in namen uporabe.</p>
+<p>Obvladovanje eksponentne rasti količine strukturiranih podatkov in še hitrejše rasti nestrukturiranih oblik predstavlja velik izziv za podjetja. Prav zato sta čedalje pomembnejši tudi izbira in uporaba ustreznih analitskih orodij, saj sta učinkovita uporaba in predstavitev velepodatkov ključ do konkurenčne prednosti neke organizacije.</p>
+<h3>Poslovna analitika</h3>
+<p>Sistem poslovne analitike je zgrajen iz digitalnih orodij za analizo podatkov, ki jih pretvarjajo v uporabne prikaze za celovito informiranje pri odločanju. Večina podjetij pozna poslovno analitiko najbolj v kontekstu strukturiranih podatkov. Napredek pri uporabi umetne inteligence in strojnega učenja pa nam omogoča, da v uporabno obliko pretvarjamo tudi nestrukturirane informacije.</p>
+<p>Podjetja potrebujejo nabor zelo prilagodljive analitike, ki ustreza zahtevam in specifikam oddelkov, posameznikov in procesov. To pomeni, da je na voljo podpora s prilagojenimi nadzornimi ploščami in poročili, ki uporabnikom podajajo informacije v razumljivih izrazih in slogih na znan način. Poleg tega je analize mogoče razširjati, spreminjati in ob njihovi pomoči najti točno iskane informacije. Ta orodja omogočajo dostop do podatkov v naravnem jeziku in pomagajo narediti analitične rezultate dostopnejše tudi tistim, ki morda niso tako vešči analitike.</p>
+<p>Napredna analitika z uporabo umetne inteligence in strojnega učenja omogoča uporabnikom večjo natančnost tolmačenja podatkov in globlji vpogled v sistem. Seveda prinašajo taka orodja tudi dodaten izziv za številne organizacije, ki še niso usvojile potrebnih znanj za uporabo umetne inteligence in strojnega učenja. V takih primerih delo olajšajo samodejni sistemi poslovne analitike, ki nadomestijo pomanjkanje poznavanja tehnologij umetne inteligence v podjetjih, hkrati pa omogočajo odločevalcem dostop do vseh informacij, ki jih potrebujejo.</p>
+<h3>Platforma za poslovno inteligenco 3 TAV</h3>
+<p>Podjetje 3 Tav s svojimi rešitvami in z visoko strokovno usposobljeno ekipo sodelavcev ter s širokim področjem znanj omogoča podjetjem učinkovito digitalizacijo in implementacijo sistemov poslovne inteligence. Ponujene rešitve obsegajo celotno vertikalo informacijskega sistema, od zajema podatkov, njihovega shranjevanja v relacijske in nerelacijske podatkovne zbirke, agregacije, transformacije, obdelave, analize z algoritmi umetne inteligence in strojnega učenja, vizualizacije do implementacije v poslovno okolje organizacije. 3 Tav z globalnimi partnerji razvija informacijske sisteme z najsodobnejšimi tehnologijami, ki podjetjem omogočajo kakovostno poslovno inteligenco ter uporabo storitev v oblaku.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nagrajeni portal za uporabnike storitev v energetiki &#8211; Moj ECE</title>
+		<link>/nagrajeni-portal-za-uporabnike-storitev-v-energetiki-moj-ece/</link>
+		
+		<dc:creator><![CDATA[skrbnik]]></dc:creator>
+		<pubDate>Thu, 16 Sep 2021 10:00:37 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www.3tav.si/?p=1873</guid>
+
+					<description><![CDATA[Dobavitelj energentov, podjetje ECE d.o.o. iz Celja, je v letu 2021 svojim naročnikom ponudil prenovljen uporabniški portal za povsem elektronsko urejanje naročniškega razmerja in komunikacije med ponudnikom storitve in njegovimi naročniki. Projekt je sledil ciljem podjetja prehodu na brezpapirno poslovanje in avtomatizacijo poslovnih procesov, povezanih z naročniškimi razmerji. Za izvajalca projekta je bilo izbrano podjetje 3 Tav d.o.o., v projektu je sodelovalo še oblikovalsko podjetje AV Studio. Portal &#8220;Moj ECE&#8221;[&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Dobavitelj energentov, podjetje <a href="https://www.ece.si/" target="_blank" rel="noopener">ECE d.o.o.</a> iz Celja, je v letu 2021 svojim naročnikom ponudil prenovljen uporabniški portal za povsem elektronsko urejanje naročniškega razmerja in komunikacije med ponudnikom storitve in njegovimi naročniki.</p>
+<p>Projekt je sledil ciljem podjetja prehodu na brezpapirno poslovanje in avtomatizacijo poslovnih procesov, povezanih z naročniškimi razmerji.</p>
+<p>Za izvajalca projekta je bilo izbrano podjetje 3 Tav d.o.o., v projektu je sodelovalo še oblikovalsko podjetje AV Studio. Portal &#8220;<a href="https://moj.ece.si/" target="_blank" rel="noopener"><strong>Moj ECE</strong></a>&#8221; je na 53. sejmu MOS prejel &#8220;<a href="https://www.ece.si/vabilo-na-53-mos/" target="_blank" rel="noopener">priznanje za kakovost in tržno zanimivost</a>&#8220;.</p>
+<p><img fetchpriority="high" decoding="async" class="alignnone size-full wp-image-1877" src="https://www.3tav.si/wp-content/uploads/2021/09/0-Prijava-MojEce.webp" alt="Prijava Moj ECE" width="1560" height="1613" srcset="/wp-content/uploads/2021/09/0-Prijava-MojEce.webp 1560w, /wp-content/uploads/2021/09/0-Prijava-MojEce-290x300.webp 290w, /wp-content/uploads/2021/09/0-Prijava-MojEce-990x1024.webp 990w, /wp-content/uploads/2021/09/0-Prijava-MojEce-768x794.webp 768w, /wp-content/uploads/2021/09/0-Prijava-MojEce-1486x1536.webp 1486w, /wp-content/uploads/2021/09/0-Prijava-MojEce-770x796.webp 770w" sizes="(max-width: 1560px) 100vw, 1560px" /></p>
+<h3>Moderna tehnična zasnova omogoča prilagodljivost in zanesljivost</h3>
+<p>Portal je zasnovan po principu <strong>mikrostoritev</strong>, kar pomeni, da so tehnične funkcionalnosti aplikacije razdeljene v neodvisne sklope (uporabljena je kontejnerska tehnologija Docker Swarm), te pa v izoliranem okolju vsaka zase prevzemajo obremenitve za svojo domeno in na pregleden način komunicirajo z ostalimi funkcionalnostmi. Taka zasnova omogoča visoko stopnjo nadzora nad sistemom in njegovimi posameznimi deli, samodejno sanacijo nastalih težav ter možnost namestitve in zagona aplikacije v poljubnem oblačnem prostoru, kar je bila tudi zahteva naročnika, saj je želel postavitev aplikacije na lastni infrastrukturi.</p>
+<p>Aplikacija se povezuje z nekaterimi zunanjimi storitvami, kot so digitalno podpisovanje (<a href="https://www.mikrografija.si/" target="_blank" rel="noopener">Mikrografija</a>), dokumentni sistem (<a href="https://ebadms.com/sl/napredni-dokumentni-sistem/" target="_blank" rel="noopener">EBA</a>), ERP (<a href="https://www.3tav.si/storitve-in-resitve/informatizacija-poslovnih-procesov-erp/">3 Tav IS21</a>) in drugimi.</p>
+<p>Pomemben del aplikacije je upravljanje uporabnikov, tako z vidika spoštovanja zakonodaje (GDPR), kot varnosti podatkov. V aplikacijo je implementirana t.i. enotna prijava (SSO, Keycloak) s podporo registracije in prijave preko obstoječih profilov v družbenih omrežijih.</p>
+<p>Aplikacija deluje kot enotna spletna stran (<a href="https://developer.mozilla.org/en-US/docs/Glossary/SPA" target="_blank" rel="noopener">SPA</a>), ki se preko programskega vmesnika (GraphQL) povezuje v zaledni sistem (Traefik, RabbitMQ, Prometheus, .NET &#8230;).</p>
+<h3>Avtomatizacija poslovanja z uporabniki</h3>
+<p>Nadgradnja, ki jo prinaša v letu 2021 prenovljeni portal <strong>Moj ECE</strong>, je celovito <strong>elektronsko poslovanje z uporabniki</strong>: od vzpostavitve uporabniškega računa in spremembe naročniškega razmerja, izbire naročniških paketov in storitev, vpogled v račune, vpogled v porabo in sporočanje porabe plina, naročilo reklamacij itd.</p>
+<p>Portal Moj ECE je zasnovan s ciljem, da je uporabniku v čim večjo pomoč pri upravljanju naročniškega razmerja:</p>
+<ul>
+<li>Po eni strani aplikacija uporabniku tako nudi pomoč pri izvedbi vseh naročniških postopkov preko <strong>vodenih obrazcev</strong> (čarovnikov), ki se povezujejo z različnimi bazami podatkov in uporabniku svetujejo in samodejno izpolnijo podatke, ki jih sistem lahko sam pridobi iz drugih virov, kot so recimo podatki o obstoječih odjemnih mestih naročnikov.</li>
+<li>Po drugi strani je v aplikacijo vgrajeni sistem opomnikov (po e-pošti in sms-u), ki uporabnika obvešča o pomembnih dogodkih glede naročniškega razmerja.</li>
+</ul>
+<blockquote><p>V podjetju 3 Tav d.o.o. smo ponosni na izvedbo projekta Moj ECE, saj gre za pilotski projekt, v katerem smo uvedli najnovejše programske koncepte in skupaj z naročnikom uspeli zagotiviti uporabnikom moderno in kakovostno storitev. Nagrajeni portal je plod uspešnega partnerskega sodelovanja z naročnikom in oblikovalskim studijem.</p></blockquote>
+<p><img decoding="async" class="alignnone size-full wp-image-1878" src="https://www.3tav.si/wp-content/uploads/2021/09/1-Home-MojEce.webp" alt="Moj ECE" width="1560" height="1187" srcset="/wp-content/uploads/2021/09/1-Home-MojEce.webp 1560w, /wp-content/uploads/2021/09/1-Home-MojEce-300x228.webp 300w, /wp-content/uploads/2021/09/1-Home-MojEce-1024x779.webp 1024w, /wp-content/uploads/2021/09/1-Home-MojEce-768x584.webp 768w, /wp-content/uploads/2021/09/1-Home-MojEce-1536x1169.webp 1536w, /wp-content/uploads/2021/09/1-Home-MojEce-770x586.webp 770w" sizes="(max-width: 1560px) 100vw, 1560px" /></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Poslovna inteligenca v dobi podatkov</title>
+		<link>/poslovna-inteligenca-v-dobi-podatkov/</link>
+		
+		<dc:creator><![CDATA[3Tav]]></dc:creator>
+		<pubDate>Wed, 16 Jun 2021 22:00:58 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www2.3tav.si/?p=518</guid>
+
+					<description><![CDATA[Poslovna inteligenca (angl. Business Intelligence, v nadaljevanju BI) je v današnjem času del vseh podjetij, tako velikih kot tudi vseh malih. Dandanes podatki vladajo na vsakem poslovnem področju in v vseh panogah. Podjetja lahko sedaj z lahkoto zbirajo izjemne količine podatkov, uporabijo napredne algoritme in umetno inteligenco – vse za lažje identifikacijo različnih trendov, pridobivanja vpogleda v obsežno količino podatkov in izvajanja odločitev v realnem času. Pravilno zastavljeni podatkovni tokovi[&#8230;]]]></description>
+										<content:encoded><![CDATA[<p><strong>Poslovna inteligenca</strong> <em>(angl. Business Intelligence, v nadaljevanju BI)</em> je v današnjem času del vseh podjetij, tako velikih kot tudi vseh malih. Dandanes podatki vladajo na vsakem poslovnem področju in v vseh panogah. Podjetja lahko sedaj z lahkoto zbirajo izjemne količine podatkov, uporabijo napredne algoritme in umetno inteligenco – vse za lažje identifikacijo različnih trendov, pridobivanja vpogleda v obsežno količino podatkov in izvajanja odločitev v realnem času. Pravilno zastavljeni podatkovni tokovi in orodja BI prinašajo podjetjem visoko konkurenčno prednost.</p>
+<h3>Cilji in namen BI</h3>
+<p>Tradicionalni cilji BI so <strong>optimizacija poslovnih procesov</strong>, <strong>zniževanje stroškov</strong>, <strong>povečanje produktivnosti</strong> in <strong>dvig kakovosti storitev</strong>. Dober in sodoben BI mora omogočati enostaven pregled celotnega poslovanja in avtomatizirati ponavljajoče naloge znotraj podjetja:</p>
+<ul>
+<li><strong>Učinkovit pregled</strong> – podatkovne vizualizacije in agregacije ključnih indikatorjev poslovanja so kot cockpit, ki s hitrim pogledom omogoča vodenje in odločanje.</li>
+<li><strong>Podatkovno rudarjenje </strong>– iz splošnega pregleda indikatorjev je potrebno hitro dostopati do detajlov in pregledati podatke iz različnih zornih kotov, kar pomeni razstavljanje, obračanje in pivotiranje.</li>
+<li><strong>Enoten vir informacij</strong> &#8211; namesto več excelov ali drugih orodij z različnimi številkami je postopek avtomatiziran in se izvaja poenoteno. Zaposleni se lahko pogovarjajo o poslovnih težavah in izzivih namesto o različnih številkah, ki jih ima vsak pri sebi. Poročanje in napovedovanje tečeta samodejno in posodabljata se dosledno, natančno in pravočasno.</li>
+</ul>
+<p>Implementacija BI v podjetjih pogosto predstavlja velik izziv, ker zahteva strokovno znanje iz različnih področij. Ena izmed večnih težav BI je ta, da je <strong>potrebno veliko časa za integracijo podatkovnih virov</strong>. Dogaja se, da se podatki zbirajo v vsakem oddelku posebej in to v različnih podatkovnih bazah, po različnih metodologijah, excelovnih datotekah ipd. in niso enostavno povezljivi. Dodatno pa dandanes nastaja ogromna količina podatkov zaradi digitalizacije poslovanja na področjih, kjer si nekaj let nazaj še nismo predstavljali digitalizacije. Gre za digitalizacijo popolnoma vseh poslovnih procesov, zbiranja ogromnih količin podatkov iz različnih virov (procesov, senzorjev, <strong><a href="https://sl.wikipedia.org/wiki/Internet_stvari" target="_blank" rel="noopener">IoT naprav</a></strong>).</p>
+<h3>Velepodatki &#8211; Big Data</h3>
+<ul>
+<li><strong>Preberite tudi:</strong> <em>Kakšna je razlika med velepodatki in poslovno analitiko?</em></li>
+</ul>
+<p>Pri <strong>velepodatkih</strong> gre za povsem nov pristop v BI. Tradicionalno so poslovni uporabniki BI sistema postavili zahteve, npr. mesečno poročilo, učinkovitost ali analiza produktivnosti. Te zahteve je nato IT oddelek pretvoril v poizvedbe iz podatkovne baze in vizualizacije. Z razvojem podatkovne znanosti in »Big data« pa postaja BI platforma za shrambo, preobrazbo in analizo različnih podatkovnih virov, ki <strong>omogoča ustvarjalno raziskavo</strong>. Poslovni uporabniki lahko nato raziščejo kakšne zahteve za vizualizacijo lahko sploh postavijo, npr. kako maksimiramo uporabe nekih sredstev. Te dodatne informacije, ki jih pridobijo v primerjavi s tradicionalnim BI, predstavljajo njihovo konkurenčno prednost na trgu.</p>
+<h3>Umetna Inteligenca</h3>
+<p><strong>Umetna inteligenca</strong> ne potrebuje formul, algoritmov ali ljudi, ki bi jih implementirali &#8211; to je njena velika prednost pred klasičnimi sistemi. Dovolj hitro lahko samo na podlagi statistike izvaja spremljanje različnih kazalnikov v veliki množici podatkov.</p>
+<ul>
+<li><strong>Identificira anomalije</strong> in tako prepozna težave ter opozori nanje.</li>
+<li><strong>Opisuje podatke</strong> bolje kot klasične metode, saj prepozna boljše metrike in ponuja primernejše vizualizacije.</li>
+<li><strong>Diagnosticira težave</strong> – učinkovita je pri analizi dejanskih vzrokov, ki vplivajo na rezultate.</li>
+<li><strong>Napoveduje</strong> – umetna inteligenca avtomatizira naloge, ki jih opravljajo podatkovni analitiki, kar so zbiranje podatkov, testiranje napovednih modelov in izbiro najboljših algoritmov za predikcijo.</li>
+<li><strong>Strojno učenje</strong> &#8211; temelji na empirični analizi informacij in poznejši konstrukciji algoritmov za samostojno učenje sistemov.</li>
+</ul>
+<blockquote>
+<h4>Platforma za poslovno inteligenco</h4>
+<p>Podjetje 3Tav s svojimi rešitvami in strokovnjaki s širokega področja omogoča podjetjem učinkovito digitalizacijo in implementacijo sistemov poslovne inteligence. Storitev ponuja celotno vertikalo informacijskega sistema, od zajema podatkov, shranjevanja v relacijske in nerelacijske podatkovne baze, agregacijo in transformacijo podatkov, obdelavo podatkov, analiza z algoritmi umetne inteligence in strojnega učenja, vizualizacija podatkov in implementacija v poslovno okolje podjetja. 3Tav skupaj z globalnimi podjetji razvija informacijske sisteme z najsodobnejšimi tehnologijami, ki podjetjem omogočajo kakovostno poslovno inteligenco.</p></blockquote>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Kako z elektronskim podpisovanjem dokumentov zmanjšati stroške podjetja in izboljšati nivo storitev za uporabnike</title>
+		<link>/kako-z-elektronskim-podpisovanjem-dokumentov-zmanjsati-stroske-podjetja-in-izboljsati-nivo-storitev-za-uporabnike/</link>
+		
+		<dc:creator><![CDATA[skrbnik]]></dc:creator>
+		<pubDate>Mon, 30 Nov 2020 23:00:23 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www2.3tav.si/?p=514</guid>
+
+					<description><![CDATA[V letu 2020 smo priča epidemiji, ki je na globalnem nivoju prisilila vse, da slečemo marsikatero železno srajco starih navad in spremenimo dosedanji način poslovanja. Predvsem zaradi okrnjenih možnosti vzpostavljanja osebnih stikov s strankami in poslovnimi partnerji, smo se pričeli spogledovati z novimi oblikami poslovanja, ki smo se jim pred epidemijo izogibali. Uvajanje novih orodij in postopkov je namreč vedno naporno, tako za podjetja, kot za stranke. Lahko pa prinese[&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>V letu 2020 smo priča epidemiji, ki je na globalnem nivoju prisilila vse, da slečemo marsikatero železno srajco starih navad in spremenimo dosedanji način poslovanja. Predvsem zaradi <strong>okrnjenih možnosti vzpostavljanja osebnih stikov</strong> s strankami in poslovnimi partnerji, smo se pričeli spogledovati z novimi oblikami poslovanja, ki smo se jim pred epidemijo izogibali. Uvajanje novih orodij in postopkov je namreč vedno naporno, tako za podjetja, kot za stranke. Lahko pa prinese tudi nekaj dodatnih stroškov.</p>
+<p>Med tehničnimi rešitvami, ki so na voljo že dalj časa, a niso bile pogosto uporabljene, je <strong>elektronsko podpisovanje dokumentov</strong> oz. pogodb. Ta način poslovanja je zakonsko predviden že od leta 2004 in je bil določen v Zakonu o elektronskem poslovanju in elektronskem podpisu (ZEPEP). S tem zakonom se uvaja enakovrednost elektronskega in lastnoročnega podpisa na dokumentih, kadar so izpolnjeni nekateri pogoji.</p>
+<p>V primeru elektronskega poslovanja med podjetjem in uporabniki celoten postopek poslovanja poteka preko spleta z uporabo spletne aplikacije, ki podpira elektronsko podpisovanje dokumentov. Pogodbe, ki jih v ne-elektronskem načinu poslovanja natisnemo in potem v fizični obliki shranimo v arhiv podjetja, tu nadomestimo z izključno digitalno obliko dokumentov. Celoten življenjski cikel pogodbe se odvije znotraj spletne aplikacije.</p>
+<p>Uporabnik, ki želi naročiti neko storitev (npr. sklenitev naročniškega razmerja), obišče spletno aplikacijo ponudnika storitev, tam izbere želeno storitev in sproži postopek podpisovanja pogodb. V tem trenutku pogodbe še ne obstajajo, pomembno pa je, da je v tem koraku postopka komunikacija med uporabnikom in aplikacijo že zaščitena z vzpostavitvijo varne šifrirane komunikacijske povezave. Uporabniki prepoznajo tak način komunikacije po izrisani ključavnici v naslovni vrstici spletnega brskalnika.</p>
+<p>Spletna aplikacija se na naročilo uporabnika odzove tako, da pripravi ustrezne pogodbe, jih predizpolni in uporabnika pozove k morebitnemu vpisu manjkajočih podatkov. Ko so pogodbe vsebinsko pripravljene, jih uporabnik dobi v predogled in v kolikor se strinja z vsebino, sproži postopek digitalnega podpisovanja. Strežnik pripravi dokumente za podpis in uporabniku preko drugega komunikacijskega kanala (običajno je to SMS) pošlje posebno enkratno šifro, ki jo mora vnesti v aplikacijo. Na ta način uporabnik dokaže svojo avtentičnost in avtorizira strežnik, da v imenu podjetja in uporabnika zaključi proces podpisovanja. Podpisane pogodbe uporabnik prejme na svoj e-naslov, podjetju pa se pogodbe samodejno shranijo v dokumentni sistem oz. varno hrambo dokumentov. Postopek se zaključi tako, da se določila iz pogodbe izvedejo tudi v poslovnem sistemu podjetja (ERP), npr. da se uporabnika doda med naročnike.</p>
+<p>Elektronsko podpisovanje dokumentov predstavlja priložnost za podjetja, ki želijo prihraniti na času, znižati stroške poslovanja in sočasno uporabnikom omogočiti <strong>24 urno razpoložljivost za sklepanje pogodb</strong>. Prvi pogoj za vstop v celovit sistem elektronskega poslovanja podjetja je sistem elektronskega podpisovanja dokumentov. Drugi pogoj je integracija elektronsko podpisanih pogodb v poslovni sistem podjetja (ERP), tretji pa varna hramba dokumentov skladno z zakonodajo.</p>
+<p>Seveda pa omogočanje tehnične izvedbe tovrstnega poslovanja ni dovolj. Tako kot je poslovna komunikacija pomembna pri fizičnem stiku z uporabnikom, je pri elektronskem poslovanju pomembno, da svojo ponudbo podjetje predstavi na razumljiv in uporabnikom prijazen način. Večina podjetij je ta komunikacijski vidik že do sedaj opravljala zelo dobro, v letu 2020 pa so pri poslovanju z uporabniki pričela pospešeno izpopolnjevati še storitve elektronskega poslovanja. Glede na to, da celovito elektronsko poslovanje postaja nekaj običajnega, tako za podjetja, kot za uporabnike, lahko v prihodnje pričakujemo pospešen razvoj rešitev na tem področju, tako z vidika komunikacije oz. marketinga, kot iz tehničnega vidika.</p>
+<p>V podjetju <strong>3 Tav</strong> ponujamo programske rešitve za celovito digitalno poslovanje podjetij: dokumentni sistemi, masovni obračun, finance in računovodstvo, vodenje proizvodnje, poslovna analitika&#8230; Prilagajamo se potrebam naših naročnikov in skrbimo, da so naše rešitve vedno v koraku s časom in zahtevami trga.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Umetna inteligenca (UI) za upravljanje energije</title>
+		<link>/umetna-inteligenca-ui-za-upravljanje-energije/</link>
+		
+		<dc:creator><![CDATA[3Tav]]></dc:creator>
+		<pubDate>Thu, 16 Jan 2020 23:00:33 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www2.3tav.si/?p=516</guid>
+
+					<description><![CDATA[Proizvodnja, distribucija in poraba električne energije je v obdobju drastičnih sprememb. Po eni strani se v omrežje vključuje vse večje število miniproizvajalcev elektrike: fotovoltaika in vetrne elektrarne. Poleg tega se v EU že pripravljajo direktive s katerimi bo potrebno pri električnih avtomobilih omogočati vračanje energije v omrežje. Po drugi strani se povečuje število novih porabnikov električne energije pri končnih potrošnikih (klimatske naprave, toplotne črpalke, električni avtomobili, itd.), ki niso bili[&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Proizvodnja, distribucija in poraba električne energije je v obdobju drastičnih sprememb. Po eni strani se v omrežje vključuje vse večje število miniproizvajalcev elektrike: fotovoltaika in vetrne elektrarne. Poleg tega se v EU že pripravljajo direktive s katerimi bo potrebno pri električnih avtomobilih omogočati vračanje energije v omrežje. Po drugi strani se povečuje število novih porabnikov električne energije pri končnih potrošnikih (klimatske naprave, toplotne črpalke, električni avtomobili, itd.), ki niso bili predvideni pri načrtovanju sedanjega elektroenergetskega omrežja.</p>
+<p>Ker električne energije trenutno ne moremo dobro shranjevati in mora biti proizvodnja in poraba uravnotežena je posledica teh novih okoliščin pojav neuravnoteženost proizvodnje in porabe električne energije. Težava se pojavlja tako na nacionalnem, kot na lokalnem nivoju, saj je energetski sistem zgrajen za pretok energije od velikih elektrarn do lokalnega nivoja, ne pa za mikroproizvodnjo na lokalnem nivoju. Vse to otežuje upravljanje elektro omrežja oz. učinkovito izravnanje proizvodnje s porabo energije.</p>
+<p>V EU se zato že razpravlja o različnih cenah energije v odvisnosti od trenutne obremenitve omrežja. To je pomembno tako za končne porabnike energije, da načrtujejo porabo energije v najbolj ugodnem terminu, kot za ponudnike električne energije, da s pravilnimi napovedmi porab načrtujejo najbolj optimalno količino zakupa električne energije in se s tem izognejo kaznim za neporabljeno oz. preveč porabljene energije.</p>
+<p>Vprašanje točnih napovedi porabe je možno rešiti s t.i. profiliranjem narave potrošnika ali industrijskega obrata skozi čas (znotraj dneva, v tednu, mesečno, sezonsko) in glede na zunanje vplivne faktorje (temperaturo, industrijska naročila, planiran dopust). Te profile pa se nato, v kombinaciji z natančnim spremljanjem trenutnega stanja in z uporabo umetne inteligence, uporabi kot osnovo za napovedovanje porabe električne energije v prihodnosti.</p>
+<p>Podatki o potrošniških profilih odpirajo tudi možnosti za različne nove aplikacije. En tak primer je združevanje različnih uporabnikov v t.i. potrošniške skupine, s čimer lahko navzven nastopajo kot en profil in s tem zmanjšajo skupno odstopanje med dejansko in napovedano porabo. Potrošniki se bodo lahko povezovali tudi interesno, npr. oblikovale se bodo skupine porabnikov zelene energije.</p>
+<p>Koncept povezovanja potrošnikov v potrošniške skupine se lahko nadgradi s sistemom sklepanja pametnih pogodb s tehnologijo veriženja blokov (blockchain), s čimer se uporabnikom omogoči hipno (ad-hoc) ustvarjanje skupin glede na potrebe na trgu.</p>
+<p>V industriji bo oblikovanje potrošniških skupin omogočalo povezovanje digitaliziranih industrisjkih obratov v skupino dobaviteljske verige. To bo omogočalo upravljanje in optimiziranje porabe električne energije celotne dobaviteljske verige in bodo končni izdelki proizvedeni z manjšim stroškom električne energije.</p>
+<p>Prilagajanje porabe posameznega uporabnika poteka tako, da sistem predlaga znižanje ali zvišanje porabe v določenem trenutku, uporabnik pa se potem odzove, ali ročno z vklopom oz. izklopom električnih naprav, ali pa določanje režima (v naprej nastavljenih okvirih) prepusti sistemu.</p>
+<p>Za modeliranje profilov uporabnikov je potrebno zbiranje velike količine podatkov. Za njihovo uporabo pa je potreben čim bolj natančen zajem trenutnega stanja. Slednje se izvaja z avtomatskim črpanjem podatkov o trenutni porabi in vplivnih faktorjih iz množice virov v rednih časovnih intervalih, kot so npr. IoT naprave (pametni števci, različni senzorji, elektronske naprave, itd.). Stalen zajem podatkov o porabi končnih uporabnikov služi tudi kot povratna zanka za samoučeč sistem izgradnje profilov in napovedovanja porabe.</p>
+<p>V podjetju 3 Tav skrbimo za upravljanje in obdelavo podatkov o porabi energentov in odjemnih mest ter izvajamo masovni <em>billing</em> (obračun porabe po dogovorjenih cenah ter dostavo računov in položnic končnim uporabnikom). Trenutno izvajamo dva razvojna projekta, sofinancirana s strani ESSR &#8211; Evropskega sklada za regionalni razvoj, s katerima vpeljujemo uporabo umetne inteligence na področje porabe in trga energentov.</p>
+<p>V okviru iniciative EUREKA razvijamo algoritme za profiliranje strank in umetno inteligenco za predvidevanje porabe, ter oblačno rešitev za kompleksni biling. V sklopu projekta <em>Demo piloti </em>pa smo koordinator konzorcija sedmih industrijskih partnerjev, v katerem razvijamo umetno inteligenco v oblaku za napoved porabe in aktivno upravljanje energije v odvisnosti od vplivnih parametrov pri končnih potrošnikih, potrošniških skupinah in digitaliziranih tovarnah. Tu je poudarek predvsem na digitalizaciji proizvodnje in razvoju t.i. digitalnih dvojčkov ter energetsko upravljanje pametnih destinacij, bodisi skupini digitaliziranih tovarn, bodisi drugih pametnih destinacij.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Predvidevanje porabe električne energije &#8211; INNOVA 2019</title>
+		<link>/predvidevanje-porabe-elektricne-energije-innova-2019/</link>
+		
+		<dc:creator><![CDATA[3Tav]]></dc:creator>
+		<pubDate>Tue, 19 Nov 2019 23:00:45 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">http://itinc.themesion.com/demo1/?p=12788</guid>
+
+					<description><![CDATA[Predavanje s tehnološko-inovativniga dogodka INNOVA v organizaciji Razvojnega centra Novo mesto in Centra srednjih šol Novo mesto, na katerem je predaval naš zunanji sodelavec dr. Andrej Dobrovoljc.   “Za učinkovito predvidevanje porabe električne energije se je potrebno odločiti za pravo rešitev” dr. Andrej Dobrovoljc  Poglejte posnetek predavanja]]></description>
+										<content:encoded><![CDATA[		<div data-elementor-type="wp-post" data-elementor-id="26" class="elementor elementor-26">
+									<section class="elementor-section elementor-top-section elementor-element elementor-element-1a3589fb thsn-col-stretched-none thsn-bg-color-over-image elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1a3589fb" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-14e864db thsn-bg-color-over-image" data-id="14e864db" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-193764b3 elementor-widget elementor-widget-text-editor" data-id="193764b3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.18.0 - 20-12-2023 */
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#69727d;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#69727d;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style>				<p>Predavanje s tehnološko-inovativniga dogodka INNOVA v organizaciji <strong><a href="https://www.rc-nm.si/" target="_blank" rel="noopener">Razvojnega centra Novo mesto</a></strong> in <a href="https://www.sc-nm.si/" target="_blank" rel="noopener"><strong>Centra srednjih šol Novo mesto</strong></a>, na katerem je predaval naš zunanji sodelavec dr. Andrej Dobrovoljc.</p>
+<p> </p>
+<blockquote>
+<p>“Za učinkovito predvidevanje porabe električne energije se je potrebno odločiti za pravo rešitev” <em>dr. Andrej Dobrovoljc </em></p>
+</blockquote>
+<p></p>
+<figure>
+<div> </div>
+</figure>
+<p></p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-c3c3bcd thsn-col-stretched-none thsn-bg-color-over-image elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c3c3bcd" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f2e7079 thsn-bg-color-over-image" data-id="f2e7079" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6960308 elementor-widget elementor-widget-heading" data-id="6960308" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.18.0 - 20-12-2023 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2 class="elementor-heading-title elementor-size-default">Poglejte posnetek predavanja</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-754b585 thsn-col-stretched-none thsn-bg-color-over-image elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="754b585" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-23454ff thsn-bg-color-over-image" data-id="23454ff" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-a5c5859 elementor-widget elementor-widget-image" data-id="a5c5859" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.18.0 - 20-12-2023 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>													<a href="https://www.youtube.com/watch?v=QJRGAC3_NF8" target="_blank" rel="nofollow">
+							<img decoding="async" width="847" height="476" src="/wp-content/uploads/2019/11/innova-1024x576.webp" class="attachment-large size-large wp-image-1777" alt="Video: Predvidevanje porabe električne energije – INNOVA 2019" srcset="/wp-content/uploads/2019/11/innova-1024x576.webp 1024w, /wp-content/uploads/2019/11/innova-300x169.webp 300w, /wp-content/uploads/2019/11/innova-768x432.webp 768w, /wp-content/uploads/2019/11/innova-770x433.webp 770w, /wp-content/uploads/2019/11/innova.webp 1280w" sizes="(max-width: 847px) 100vw, 847px" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+							</div>
+		]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Mednarodna konferenca Brač 2019: &#8220;Aktualna problematika v vodoopskrbi i odvodnji&#8221;</title>
+		<link>/mednarodna-konferenca-brac-aktualna-problematika-v-vodoopskrbi-i-odvodnji/</link>
+		
+		<dc:creator><![CDATA[3Tav]]></dc:creator>
+		<pubDate>Fri, 25 Oct 2019 22:00:00 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www2.3tav.si/?p=457</guid>
+
+					<description><![CDATA[V letu 2019 smo uspešno sodelovali na razpisu &#8220;Javni razpis za sofinanciranje aktivne udeležbe podjetij na mednarodnih poslovnih dogodkih v tujini v letu 2019&#8243;, objavljenem na spletni strani Javne agencije Republike Slovenije za spodbujanje podjetništva, internacionalizacije, tujih investicij in tehnologije &#8211; SPIRIT.  Prijavili smo se z operacijo: aktivna udeležba na mednarodni konferenci Brač &#8211; AKTUALNA PROBLEMATIKA U VODOOPSKRBI I ODVODNJI.  Dogodek je potekal v Hotelu Olympia, Brač, Hrvaška in sicer v[&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>V letu 2019 smo uspešno sodelovali na razpisu &#8220;<strong>Javni razpis za sofinanciranje aktivne udeležbe podjetij na mednarodnih poslovnih dogodkih v tujini v letu 2019&#8243;</strong>, objavljenem na spletni strani <a href="https://www.spiritslovenia.si" target="_blank" rel="noopener"><strong>Javne agencije Republike Slovenije za spodbujanje podjetništva, internacionalizacije, tujih investicij in tehnologije</strong></a> &#8211; SPIRIT. </p>
+
+
+
+<ul>
+<li>Prijavili smo se z operacijo: <strong>aktivna udeležba na mednarodni konferenci Brač &#8211; AKTUALNA PROBLEMATIKA U VODOOPSKRBI I ODVODNJI. </strong>
+
+</li>
+<li>Dogodek je potekal v Hotelu Olympia, Brač, Hrvaška in sicer v času od 23. &#8211; 26.10 2019. </li>
+</ul>
+
+
+
+<p><strong>Namen</strong> operacije je preko sofinanciranja upravičenih stroškov aktivne udeležbe na mednarodnem poslovnem dogodku v tujini podjetju</p>
+<ul>
+<li>povečati možnost predstavitve svojih dosežkov, proizvodov, storitev mednarodni poslovni javnosti,</li>
+<li>povečati možnosti poslovnega sodelovanja s tujimi kupci in poslovnimi partnerji,</li>
+<li>povečati mednarodno konkurenčnost podjetij in zvišati stopnjo internacionalizacije. </li>
+</ul>
+
+
+
+<p><strong>Cilji</strong> operacije je 10 (deset) organiziranih sestankov in dodatnih 20 (dvajset) novih obetavnih poslovnih stikov.</p>
+
+
+
+<hr />
+
+<table>
+<tbody>
+<tr style="border-color: #569bc4;">
+<td style="border: none;"><span style="letter-spacing: 0px;">Javni razpis je sofinanciran s pomočjo </span><a style="letter-spacing: 0px;" title="Evropski sklad za regionalni razvoj" href="http://www.eu-skladi.si/" target="_blank" rel="noopener" name="Evropski sklad za regionalni razvoj">Evropskega sklada za regionalni razvoj</a><span style="letter-spacing: 0px;">, </span><a style="letter-spacing: 0px;" title="Ministrstvo za gospodarski razvoj in tehnologijo" href="http://www.mgrt.gov.si/" target="_blank" rel="noopener" name="Ministrstvo za gospodarski razvoj in tehnologijo">Ministrstva za gospodarski razvoj in tehnologijo</a><span style="letter-spacing: 0px;"> in </span><a style="letter-spacing: 0px;" title="SPIRIT Slovenija, javna agencija" href="http://www.spiritslovenia.si/" target="_blank" rel="noopener" name="SPIRIT Slovenija, javna agencija">SPIRIT Slovenija, javne agencije</a><span style="letter-spacing: 0px;">.</span></td>
+</tr>
+</tbody>
+</table>
+<img loading="lazy" decoding="async" src="/wp-content/uploads/2022/08/zivali.svg" alt="EUREKA" width="280" height="100" />]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Povečajte dodano vrednost podjetja z napredno poslovno analitiko in povezovanjem ter avtomatizacijo vseh svojih poslovnih procesov</title>
+		<link>/povecajte-dodano-vrednost-podjetja-z-napredno-poslovno-analitiko-in-povezovanjem-ter-avtomatizacijo-vseh-svojih-poslovnih-procesov/</link>
+		
+		<dc:creator><![CDATA[3Tav]]></dc:creator>
+		<pubDate>Mon, 13 Aug 2018 22:00:59 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www2.3tav.si/?p=1436</guid>
+
+					<description><![CDATA[S sistemom IS21 je letno izdanih 6 milijonov računov. Srednja in velika podjetja uporabljajo sistem IS21 zaradi prihranka časa in stroškov ter njegove zanesljivosti. IS21 je edinstven zaradi integrirane poslovne analitike, ki je možna samo v sistemu, ki povezuje vse vidike poslovanja: finance, računovodstvo, plače, kadre, upravljanje zalog in skladišč, materialno načrtovanje in izdaja računov (billing). Čeprav IS21 ponuja rešitve za veliko zapletenih poslovnih procesov, njegova modularna zasnova omogoča postopno[&#8230;]]]></description>
+										<content:encoded><![CDATA[<p><strong>S sistemom IS21 je letno izdanih 6 milijonov računov. Srednja in velika podjetja uporabljajo sistem IS21 zaradi prihranka časa in stroškov ter njegove zanesljivosti. IS21 je edinstven zaradi integrirane poslovne analitike, ki je možna samo v sistemu, ki povezuje vse vidike poslovanja: finance, računovodstvo, plače, kadre, upravljanje zalog in skladišč, materialno načrtovanje in izdaja računov (billing).</strong></p>
+<p><span id="more-1436"></span></p>
+<p>Čeprav IS21 ponuja rešitve za veliko zapletenih poslovnih procesov, njegova modularna zasnova omogoča postopno vpeljavo in tako podjetju in zaposlenim olajša prehod na nov sistem. Z vsakim na novo uvedenim modulom vse bolj prihaja do izraza povezanost sistema v celoto. Vsak poslovni dogodek se namreč vnese samo enkrat in na enem mestu. To privede do vse večje optimizacije poslovanja, zmanjšuje se verjetnost napak in stroški poslovanja in izboljšuje poslovna analitika.</p>
+<h3>Finance in računovodstvo</h3>
+<p>Modulu za finance in računovodstvo je jedro sistema IS21. Tu je vozlišče vseh procesov in podatkov o poslovanju podjetja. Omogoča preprost in hiter vpogled v podatke, ki so ključni za sprejemanje vsakodnevnih odločitev pri upravljanju podjetja: od glavne knjige, zajema prejetih računov, likvidatura, obračun davka, blagajniško poslovanje in vodenje osnovnih sredstev. S sistemom IS21 je preprosto izdelati vsakovrstna poročila, od bilanc, izkazov uspeha ipd.</p>
+<h3>Nadzor terjatev</h3>
+<p>Učinkovit nadzor nad neplačanimi računi kupcev in izterjavo je ključnega pomena za uspešno poslovanje podjetja in za dober odnos s strankami. Sestavljajo ga obračun obresti, izdelava opominov, izpiski odprtih postavk ter paketne izvršbe.<br />
+Plače in kadri</p>
+<p>Modul plače omogoča obračun vseh vrst izplačil za zaposlene in zunanje sodelavce, modul kadri pa vodenje podatkov o zaposlenih delavcih, upokojencih in drugih glede na definirana delovna razmerja. Nastavitev letnih dopustov je možna za skupino izbranih delavcev ali z vpisom pri posameznem delavcu. Prav tako evidenca omogoča vodenje sistematiziranih delovnih mest in vseh vrst izobraževanj.</p>
+<h3>Materialno skladiščno poslovanje</h3>
+<p>IS21 podpira procese skladiščnega poslovanja, tako da je to pregledno in nadvse preprosto. Modul omogoča bruto in neto planiranje zalog in s povezavo z drugimi moduli IS21 omogoča preprosto izdelavo analiz za posamezni artikel. V sklopu rešitev tega modula so tudi vsi nabavni procesi s ceniki, povpraševanji, pogodbami, poročili ipd.</p>
+<h3>Proizvodnja in prodaja</h3>
+<p>IS21 nudi podporo procesom v proizvodnji v vseh njenih fazah: od priprave dela, razpisa in obračuna delovnih nalogov in priprave za fakturo. S svojimi pregledi in analizami omogoča kakovostno spremljanje dobičkonosnosti in stroškov proizvodnje. Modul prodaje pa je namenjen podjetjem, ki prodajajo svoje izdelke, polizdelke ali storitve. Lahko se uporablja samostojno ali v povezavi z ostalimi IS21 moduli.</p>
+<h3>Obračun (billing)</h3>
+<p>Želi vaše podjetje vpeljati skupni račun za vse storitve? IS21 nudi preverjeno rešitev, ki jo uporabljajo komunalna podjetja (obračun vseh komunalnih storitev), prav tako pa smo razvili prilagojene rešitve za obračun plina ter električne energije na sproščenem trgu s tema dvema energentoma.</p>
+<p>Program omogoča kompleksne načine obračuna­vanja in upošteva vse posebnosti merilnih naprav in njihovega odčitavanja in nudi izbiro poljubnega intervala obračunavanja. Omogoča izpisovanje računov v različnih oblikah, od zbirnih do izpisa posebne položnice, ali izvoz datoteke za direktne obremenitve.</p>
+<p>Modul obračuna je preprosto povezati z zunanjimi informacijskimi sistemi SAP, GIS in raznimi dokumentnimi sistemi. Prav tako je v sklopu tega modula za uporabnike storitev podjetja na voljo spletni vmesnik, preko katerega uporabniki dostopajo do svojih matičnih podatkov in vpisujejo stanje števcev.</p>
+<h3>Poslovna analitika</h3>
+<p>Analiziranje ključnih kazalnikov poslovanja podjetja in pravočasno ugotavljanje trendov oziroma napovedovanje prihodnjih rezultatov je ključno za uspešno vodenje podjetja. Sistem je razvit kot spletni portal in temelji na Microsoftovih tehnologijah MS SQL Analysis Services in Reporting Services, ki smo jih razširili z lastnimi rešitvami. V sistemu so že pripravljena poročila in alarmi, prav tako pa lahko uporabnik doda svoje. Pošiljanje poročil in opozoril je možno prilagoditi preko vrste parametrov.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Izboljšajte uspešnost podjetja s profesionalnimi oblačnimi storitvami</title>
+		<link>/izboljsajte-uspesnost-podjetja-s-profesionalnimi-oblacnimi-storitvami/</link>
+		
+		<dc:creator><![CDATA[3Tav]]></dc:creator>
+		<pubDate>Wed, 16 May 2018 22:00:05 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<guid isPermaLink="false">https://www2.3tav.si/?p=1432</guid>
+
+					<description><![CDATA[Zanesljiv način, kako izboljšati uspešnost podjetja, je standardizacija poslovnih procesov in optimizacija poslovanja preko nadgradnje informacijskega sistema. Ključni korak pri tej spremembi je izbira pravega sistema za načrtovanje virov podjetja (ERP) in upravljanja odnosov s strankami ter dobavitelji (CRM). Poleg teh dveh sistemskih rešitev pa danes podjetja potrebujejo tudi integrirane rešitve za druge procese, kot so izdaja računov, upravljanje z dokumenti, poslovna inteligenca, poročilni sistemi ipd. Da podjetje izbere najboljšo[&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Zanesljiv način, kako izboljšati uspešnost podjetja, je standardizacija poslovnih procesov in optimizacija poslovanja preko nadgradnje informacijskega sistema. Ključni korak pri tej spremembi je izbira pravega sistema za načrtovanje virov podjetja (ERP) in upravljanja odnosov s strankami ter dobavitelji (CRM).</p>
+<p>Poleg teh dveh sistemskih rešitev pa danes podjetja potrebujejo tudi integrirane rešitve za druge procese, kot so izdaja računov, upravljanje z dokumenti, poslovna inteligenca, poročilni sistemi ipd.</p>
+<p>Da podjetje izbere najboljšo rešitev za svoje poslovne procese, mora poznati sodobne trende v razvoju ERP in CRM sistemov. Med glavnimi kriteriji pri vrednotenju informacijskih rešitev je danes zagotovo možnost poslovanja v oblaku, pripravljenost na mednarodni trg &#8211; tako s finančnega in davčnega vidika, kot z vidika industrijskih standardov, večjezičnost, prilagojenost uporabniških vmesnikov za vse naprave idr.</p>
+<h3>Povezovanje razpršenih organizacijskih enot</h3>
+<p>Za velika podjetja in korporacije, vladne službe ter tudi za srednja in mala podjetja iz določenih panog (trgovina, proizvodnja, gostinjstvo ipd.), je pomembna možnost konsolidacije organizacijskih enot. Sodobni oblačni informacijski sistemi imajo tako povezovanje že vgrajeno v sam koncept delovanja, zato je ta proces konsolidacije z vidika tehnologije enostaven.</p>
+<h3>Prilagodljivost oblačnih sistemov</h3>
+<p>V vseh panogah se srečujemo z različnimi vsebinskimi posebnostmi, ki pri implementaciji informacijskih sistemov v podjetjih običajno povzročajo dodatne stroške in tveganja. Prednost sodobnih oblačnih rešitev je možnost dodajanja funkcionalnosti preko namestitve aplikacij iz trgovine v oblaku.</p>
+<h3>Prednosti profesionalnih odprtokodnih rešitev</h3>
+<p>Odprtokodnost neke programske rešitve je lahko v pomoč pri vzpostavljanju zaupanja, da je izdelek varen in zanesljiv, saj je vpogled v uporabljene tehnologije in programske rešitve mogoč kadar koli in komur koli.</p>
+<p>Oprtokodne rešitve običajno ponujajo različne licence uporabe &#8211; od brezplačnih, do plačljivih. Za podjetja, ki razmišljajo o prenovi svojega ERP in/ali CRM sistema, je poleg cene izdelka ključna tudi profesionalna podpora, ki podjetje vodi skozi postopke implementacije, zagotavlja zanesljivo delovanje sistema in je hkrati tudi jamstvo, da bo sistem v prihodnje ostal aktualen in v skladu s standardi ter najboljšimi praksami.</p>
+<h3>Združljivost z drugimi uveljavljenimi oblačnimi storitvami</h3>
+<p>Enostavna povezljivost z drugimi oblačnimi storitvami omogoča, da je implementacija novega sistema kar se da tesno vpeta v obstoječe poslovne procese in pri prehodu ne prihaja do nepotrebnih sprememb v procesu dela.</p>
+<p>Sinergija, ki nastane zaradi svobodne in hitre izbire dodatnih funkcionalnosti, kot so shramba podatkov, e-trgovanje, CMS sistemi, poslovna analitika, strojno učenje ipd., ponuja dodatne možnosti za izboljšanje učinkovitosti poslovanja.</p>
+<blockquote>
+<h4>Izbira pravega partnerja</h4>
+<p>V podjetju <strong>3 Tav d.o.o.</strong> ponujamo implementacijo sodobnih oblačnih storitev za vse industrijske panoge in javni sektor. Naši strokovnjaki s področja poslovanja in informatike v sodelovanju z naročnikom poskrbijo, da so vpeljane rešitve skladne z zakonodajo, najnovejšimi standardi in najboljšimi svetovnimi praksami ter pripravljene za mednarodni trg, če podjetje ali organizacija to potrebuje.</p>
+<p>Rešitev, ki jo ponujamo, je zgrajena na mednarodno uveljavljeni platformi <strong>Vienna Advantage</strong>. Z namestitvijo na lokaciji in v oblaku je popolnoma prilagodljiva potrebam podjetja, sodobni HTML5 vmesnik omogoča delovanje na vseh napravah, centralna trgovina aplikacij ponuja enostavno namestitev in dostop do razširitev.</p>
+<p>Naša rešitev je primerna za vse industrijske panoge, še posebej pa smo specializirani na področju industrijske proizvodnje in masovnega fakturiranja (Billing). Podjetjem nudimo tudi storitev celovite prenove in optimizacije poslovnih procesov.</p></blockquote>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,333 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?fbbc93c6444c602ec990352bef9f9b33") format("truetype"),
+url("./flaticon.woff?fbbc93c6444c602ec990352bef9f9b33") format("woff"),
+url("./flaticon.woff2?fbbc93c6444c602ec990352bef9f9b33") format("woff2"),
+url("./flaticon.eot?fbbc93c6444c602ec990352bef9f9b33#iefix") format("embedded-opentype"),
+url("./flaticon.svg?fbbc93c6444c602ec990352bef9f9b33#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "live-chat": "\f101",
+    "location": "\f102",
+    "time-call": "\f103",
+    "send": "\f104",
+    "email": "\f105",
+    "car": "\f106",
+    "car-battery": "\f107",
+    "battery-status": "\f108",
+    "car-1": "\f109",
+    "discharge": "\f10a",
+    "electric-car": "\f10b",
+    "electric-bus": "\f10c",
+    "electric-station": "\f10d",
+    "plugin": "\f10e",
+    "electricity": "\f10f",
+    "energy": "\f110",
+    "electric-car-1": "\f111",
+    "school-bus": "\f112",
+    "motorbike": "\f113",
+    "electricity-1": "\f114",
+    "electric": "\f115",
+    "electricity-2": "\f116",
+    "electric-vehicle": "\f117",
+    "station": "\f118",
+    "electric-car-2": "\f119",
+    "electric-train": "\f11a",
+    "car-parking": "\f11b",
+    "hybrid-solution": "\f11c",
+    "hybrid-solution-1": "\f11d",
+    "hybrid-car": "\f11e",
+    "home": "\f11f",
+    "fast-charge": "\f120",
+    "electric-station-1": "\f121",
+    "placeholder": "\f122",
+    "power-generation": "\f123",
+    "self-driving": "\f124",
+    "battery": "\f125",
+    "stopwatch": "\f126",
+    "stopwatch-1": "\f127",
+    "speedometer": "\f128",
+    "vegan": "\f129",
+    "quality-control": "\f12a",
+    "quality": "\f12b",
+    "tow-truck": "\f12c",
+    "tow-truck-1": "\f12d",
+    "tow-truck-2": "\f12e",
+    "towing-vehicle": "\f12f",
+    "towing-vehicle-1": "\f130",
+    "tow-truck-3": "\f131",
+    "tow-truck-4": "\f132",
+    "crane-truck": "\f133",
+    "tow-truck-5": "\f134",
+    "crane": "\f135",
+    "repair": "\f136",
+    "breakdown": "\f137",
+    "maintenance": "\f138",
+    "authentication": "\f139",
+    "car-rental": "\f13a",
+    "locked-car": "\f13b",
+    "electric-car-3": "\f13c",
+    "fuel": "\f13d",
+    "gas": "\f13e",
+    "oil": "\f13f",
+    "flat-tire": "\f140",
+    "flat-tire-1": "\f141",
+    "flat-tire-2": "\f142",
+    "clip": "\f143",
+    "man": "\f144",
+    "hat": "\f145",
+    "pump": "\f146",
+    "car-2": "\f147",
+    "tyre": "\f148",
+    "battery-1": "\f149",
+    "real-estate": "\f14a",
+    "open": "\f14b",
+    "wireless-charging": "\f14c",
+    "phone-message": "\f14d",
+);
+
+.flaticon-live-chat:before {
+    content: map-get($flaticon-map, "live-chat");
+}
+.flaticon-location:before {
+    content: map-get($flaticon-map, "location");
+}
+.flaticon-time-call:before {
+    content: map-get($flaticon-map, "time-call");
+}
+.flaticon-send:before {
+    content: map-get($flaticon-map, "send");
+}
+.flaticon-email:before {
+    content: map-get($flaticon-map, "email");
+}
+.flaticon-car:before {
+    content: map-get($flaticon-map, "car");
+}
+.flaticon-car-battery:before {
+    content: map-get($flaticon-map, "car-battery");
+}
+.flaticon-battery-status:before {
+    content: map-get($flaticon-map, "battery-status");
+}
+.flaticon-car-1:before {
+    content: map-get($flaticon-map, "car-1");
+}
+.flaticon-discharge:before {
+    content: map-get($flaticon-map, "discharge");
+}
+.flaticon-electric-car:before {
+    content: map-get($flaticon-map, "electric-car");
+}
+.flaticon-electric-bus:before {
+    content: map-get($flaticon-map, "electric-bus");
+}
+.flaticon-electric-station:before {
+    content: map-get($flaticon-map, "electric-station");
+}
+.flaticon-plugin:before {
+    content: map-get($flaticon-map, "plugin");
+}
+.flaticon-electricity:before {
+    content: map-get($flaticon-map, "electricity");
+}
+.flaticon-energy:before {
+    content: map-get($flaticon-map, "energy");
+}
+.flaticon-electric-car-1:before {
+    content: map-get($flaticon-map, "electric-car-1");
+}
+.flaticon-school-bus:before {
+    content: map-get($flaticon-map, "school-bus");
+}
+.flaticon-motorbike:before {
+    content: map-get($flaticon-map, "motorbike");
+}
+.flaticon-electricity-1:before {
+    content: map-get($flaticon-map, "electricity-1");
+}
+.flaticon-electric:before {
+    content: map-get($flaticon-map, "electric");
+}
+.flaticon-electricity-2:before {
+    content: map-get($flaticon-map, "electricity-2");
+}
+.flaticon-electric-vehicle:before {
+    content: map-get($flaticon-map, "electric-vehicle");
+}
+.flaticon-station:before {
+    content: map-get($flaticon-map, "station");
+}
+.flaticon-electric-car-2:before {
+    content: map-get($flaticon-map, "electric-car-2");
+}
+.flaticon-electric-train:before {
+    content: map-get($flaticon-map, "electric-train");
+}
+.flaticon-car-parking:before {
+    content: map-get($flaticon-map, "car-parking");
+}
+.flaticon-hybrid-solution:before {
+    content: map-get($flaticon-map, "hybrid-solution");
+}
+.flaticon-hybrid-solution-1:before {
+    content: map-get($flaticon-map, "hybrid-solution-1");
+}
+.flaticon-hybrid-car:before {
+    content: map-get($flaticon-map, "hybrid-car");
+}
+.flaticon-home:before {
+    content: map-get($flaticon-map, "home");
+}
+.flaticon-fast-charge:before {
+    content: map-get($flaticon-map, "fast-charge");
+}
+.flaticon-electric-station-1:before {
+    content: map-get($flaticon-map, "electric-station-1");
+}
+.flaticon-placeholder:before {
+    content: map-get($flaticon-map, "placeholder");
+}
+.flaticon-power-generation:before {
+    content: map-get($flaticon-map, "power-generation");
+}
+.flaticon-self-driving:before {
+    content: map-get($flaticon-map, "self-driving");
+}
+.flaticon-battery:before {
+    content: map-get($flaticon-map, "battery");
+}
+.flaticon-stopwatch:before {
+    content: map-get($flaticon-map, "stopwatch");
+}
+.flaticon-stopwatch-1:before {
+    content: map-get($flaticon-map, "stopwatch-1");
+}
+.flaticon-speedometer:before {
+    content: map-get($flaticon-map, "speedometer");
+}
+.flaticon-vegan:before {
+    content: map-get($flaticon-map, "vegan");
+}
+.flaticon-quality-control:before {
+    content: map-get($flaticon-map, "quality-control");
+}
+.flaticon-quality:before {
+    content: map-get($flaticon-map, "quality");
+}
+.flaticon-tow-truck:before {
+    content: map-get($flaticon-map, "tow-truck");
+}
+.flaticon-tow-truck-1:before {
+    content: map-get($flaticon-map, "tow-truck-1");
+}
+.flaticon-tow-truck-2:before {
+    content: map-get($flaticon-map, "tow-truck-2");
+}
+.flaticon-towing-vehicle:before {
+    content: map-get($flaticon-map, "towing-vehicle");
+}
+.flaticon-towing-vehicle-1:before {
+    content: map-get($flaticon-map, "towing-vehicle-1");
+}
+.flaticon-tow-truck-3:before {
+    content: map-get($flaticon-map, "tow-truck-3");
+}
+.flaticon-tow-truck-4:before {
+    content: map-get($flaticon-map, "tow-truck-4");
+}
+.flaticon-crane-truck:before {
+    content: map-get($flaticon-map, "crane-truck");
+}
+.flaticon-tow-truck-5:before {
+    content: map-get($flaticon-map, "tow-truck-5");
+}
+.flaticon-crane:before {
+    content: map-get($flaticon-map, "crane");
+}
+.flaticon-repair:before {
+    content: map-get($flaticon-map, "repair");
+}
+.flaticon-breakdown:before {
+    content: map-get($flaticon-map, "breakdown");
+}
+.flaticon-maintenance:before {
+    content: map-get($flaticon-map, "maintenance");
+}
+.flaticon-authentication:before {
+    content: map-get($flaticon-map, "authentication");
+}
+.flaticon-car-rental:before {
+    content: map-get($flaticon-map, "car-rental");
+}
+.flaticon-locked-car:before {
+    content: map-get($flaticon-map, "locked-car");
+}
+.flaticon-electric-car-3:before {
+    content: map-get($flaticon-map, "electric-car-3");
+}
+.flaticon-fuel:before {
+    content: map-get($flaticon-map, "fuel");
+}
+.flaticon-gas:before {
+    content: map-get($flaticon-map, "gas");
+}
+.flaticon-oil:before {
+    content: map-get($flaticon-map, "oil");
+}
+.flaticon-flat-tire:before {
+    content: map-get($flaticon-map, "flat-tire");
+}
+.flaticon-flat-tire-1:before {
+    content: map-get($flaticon-map, "flat-tire-1");
+}
+.flaticon-flat-tire-2:before {
+    content: map-get($flaticon-map, "flat-tire-2");
+}
+.flaticon-clip:before {
+    content: map-get($flaticon-map, "clip");
+}
+.flaticon-man:before {
+    content: map-get($flaticon-map, "man");
+}
+.flaticon-hat:before {
+    content: map-get($flaticon-map, "hat");
+}
+.flaticon-pump:before {
+    content: map-get($flaticon-map, "pump");
+}
+.flaticon-car-2:before {
+    content: map-get($flaticon-map, "car-2");
+}
+.flaticon-tyre:before {
+    content: map-get($flaticon-map, "tyre");
+}
+.flaticon-battery-1:before {
+    content: map-get($flaticon-map, "battery-1");
+}
+.flaticon-real-estate:before {
+    content: map-get($flaticon-map, "real-estate");
+}
+.flaticon-open:before {
+    content: map-get($flaticon-map, "open");
+}
+.flaticon-wireless-charging:before {
+    content: map-get($flaticon-map, "wireless-charging");
+}
+.flaticon-phone-message:before {
+    content: map-get($flaticon-map, "phone-message");
+}

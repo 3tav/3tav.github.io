@@ -1,0 +1,130 @@
+.thsn-header-style-1 .thsn-header-height-wrapper{
+    min-height: var(--thsn-grevo-header-height);
+}
+.thsn-header-style-1 .thsn-header-button:hover a .thsn-header-button-text-2{
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+/* @media (max-width: <?php echo esc_attr($responsive_breakpoint); ?>px){ */
+@media (max-width: 1200px){
+    .thsn-header-style-1 .thsn-header-wrapper.thsn-sticky-on{
+        position: static !important;
+        width: auto !important;
+    }
+    .thsn-header-style-1 .thsn-header-wrapper > .container > .d-flex{
+        position: relative;
+    }
+    .thsn-header-style-1 .thsn-header-search-btn {	
+        position: absolute;
+        right: 60px;
+    }
+    .thsn-header-style-1 .thsn-right-box{
+        display: none;
+    }
+}
+/*=== @media (min-width: <?php echo esc_attr($responsive_breakpoint); ?>px) { ====*/
+    @media (min-width: 1200px) {
+    /*=== thsn-header-style-1 ===*/
+    body:not(.thsn-max-mega-menu-override) .thsn-header-style-1 .thsn-navbar div > ul > li > a {
+        margin: 0 10px;
+    }
+    .thsn-header-style-1 .thsn-right-box {
+        margin-left: 10px;
+        display: flex;
+    }
+    .thsn-header-style-1 .thsn-logo-menuarea {
+        display: -ms-flexbox!important;
+        display: flex!important;
+        display: -ms-flexbox!important;
+        display: flex!important;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-pack: justify!important;
+        -ms-flex-pack: justify!important;
+        justify-content: space-between!important;
+    }
+    .thsn-header-style-1 .thsn-header-button {
+        line-height: normal;
+    }
+    .thsn-header-style-1 .thsn-header-button a{
+        color: <?php echo esc_attr($blackish_color); ?>;
+        height: 100%;
+        display: inline-block;
+        padding: 0 60px;
+        vertical-align: middle;
+        padding-right: 8px;	   
+        font-weight: normal;
+        font-size: 16px;
+        position: relative;
+        border-radius: 6px;
+        letter-spacing: 1px;
+        -webkit-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+    .thsn-header-style-1 .thsn-header-button a:after {
+        content: "\e83f";
+        font-family: "themesion-base-icons";	   
+        font-size: 45px;
+        line-height: 45px;
+        top: 3px;
+        position: absolute;
+        left: 0;	   
+        color: <?php echo esc_attr($global_color); ?>;
+        font-weight: normal;
+    }
+    .thsn-header-style-1 .thsn-header-button a span{
+        display: block;
+    }
+    .thsn-header-style-1 .thsn-header-button .thsn-header-button-text-1{
+        font-weight: 700;		
+        margin-bottom: 5px;
+    }
+    .thsn-header-style-1 .thsn-header-button{
+        line-height: normal;
+    }
+    .thsn-header-style-1 .thsn-sticky-on .thsn-header-button a{
+        color: <?php echo esc_attr($blackish_color); ?>;		
+    }
+    .thsn-header-style-1 .thsn-right-box .thsn-cart-wrapper a, 
+	.thsn-header-style-1 .thsn-right-box .thsn-header-search-btn a{
+		font-size: 18px;
+		color: var(--thsn-grevo-global-color);
+	}
+	.thsn-header-style-1 .thsn-right-box .thsn-cart-wrapper a{
+		position: relative;
+		padding-left: 30px;		
+	}
+	.thsn-header-style-1 .thsn-right-box .thsn-cart-wrapper.thsn-show-cart-amount-no a{
+		padding-left: 25px;
+	}
+	.thsn-header-style-1 .thsn-right-box .thsn-cart-wrapper a:before {
+	    content: "\E83B";
+	    font-family: "themesion-base-icons";	   
+	    font-size: 20px;
+	    line-height: 20px;	   
+	    position: absolute;
+	    left: 0px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		transform: translateY(-50%);
+	    font-weight: normal;
+		-webkit-transition: all .25s ease-in-out;
+    	transition: all .25s ease-in-out;
+	}
+	.thsn-header-style-1 .thsn-right-box .thsn-cart-wrapper .thsn-cart-count{		
+		position: absolute;
+		top: -21px;
+		left: 2px;
+		background-color: var(--thsn-grevo-global-color);
+		color: #fff;
+		height: 20px;
+		line-height: 20px;
+		width: 20px;
+		text-align: center;
+		border-radius: 50%;
+		font-size: 13px;
+	}
+}

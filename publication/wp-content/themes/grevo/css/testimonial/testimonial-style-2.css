@@ -1,0 +1,82 @@
+.thsn-testimonial-style-2 .themesion-testimonial-wrapper:after {
+    position: absolute;
+    content: '\e852';
+    font-size: 110px;
+    line-height: 75px;
+    top:0px;
+    left: 50%;
+    color: rgba(var(--thsn-grevo-global-color-rgb) ,0.20);
+    font-family: 'themesion-base-icons';
+    -khtml-transform: translateX(-50%) translateY(-40%);
+    -moz-transform: translateX(-50%) translateY(-40%);
+    -ms-transform: translateX(-50%) translateY(-40%);
+    -o-transform: translateX(-50%) translateY(-40%);
+    transform: translateX(-50%) translateY(-40%);
+}
+.thsn-testimonial-style-2 .thsn-featured-wrapper{
+    width: 70px;
+}
+.thsn-testimonial-style-2 .themesion-box-author {
+    padding-left: 20px;
+}
+.thsn-testimonial-style-2 .themesion-testimonial-wrapper {
+    position: relative;
+    text-align: center;
+    max-width: 920px;
+    margin: 0 auto 30px;
+    padding: 0 15px;
+    color: var(--thsn-grevo-secondary-color);
+}
+.thsn-testimonial-style-2 .themesion-box-title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.thsn-testimonial-style-2 .themesion-testimonial-detail {
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--thsn-grevo-global-color);
+}
+.thsn-testimonial-style-2 .themesion-box-desc blockquote{
+    font-size: 22px;
+    line-height: 36px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    font-style: normal;
+    font-weight: 400;
+}
+.thsn-testimonial-style-2 .themesion-box-star-ratings {
+    font-size: 25px;
+}
+.thsn-testimonial-style-2 .themesion-box-star-ratings i:before{
+    margin: 0 0.1em;
+}
+.thsn-testimonial-style-2 .themesion-box-star-ratings i.thsn-active{
+    color: #ffc821;
+}
+.thsn-testimonial-style-2 .themesion-box-desc {
+    margin: 30px 0 20px;
+}
+.thsn-element-testimonial-style-2.themesion-element-viewtype-carousel .owl-carousel .owl-nav{
+    top: calc(50% - 65px);
+}
+.thsn-element-testimonial-style-2.themesion-element-viewtype-carousel .owl-carousel .owl-nav .owl-prev{
+    left: 0;
+}
+@media (max-width: 1025px){
+    .thsn-testimonial-style-2 .themesion-testimonial-wrapper{
+        width: auto;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1025px){
+    .thsn-testimonial-style-2 .themesion-testimonial-wrapper{
+        margin: 0 50px 30px;
+    }
+}
+@media (max-width: 767px){
+	.thsn-element-testimonial-style-2.themesion-element-viewtype-carousel .owl-carousel .owl-nav{
+		display: none;
+	}
+}

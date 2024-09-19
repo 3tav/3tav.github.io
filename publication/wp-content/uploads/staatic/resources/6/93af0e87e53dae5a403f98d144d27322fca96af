@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ZPGOPEK &#8211; 3 TAV</title>
+	<atom:link href="/tag/zpgopek/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>Informacijske rešitve za učinkovito vodenje podjetja</description>
+	<lastBuildDate>Mon, 10 Jul 2023 10:58:14 +0000</lastBuildDate>
+	<language>sl-SI</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>Potrebujete pomoč za izdelavo API vmesnika za razpis ZPGOPEK (SPIRIT Slovenija)?</title>
+		<link>/api-vmesnik-za-spirit/</link>
+		
+		<dc:creator><![CDATA[skrbnik]]></dc:creator>
+		<pubDate>Tue, 04 Jul 2023 10:00:42 +0000</pubDate>
+				<category><![CDATA[Novice]]></category>
+		<category><![CDATA[API]]></category>
+		<category><![CDATA[Spirit]]></category>
+		<category><![CDATA[ZPGOPEK]]></category>
+		<guid isPermaLink="false">/?p=2438</guid>
+
+					<description><![CDATA[Izdelava programskega vmesnika (API) za potrebe poročanja za razpis SPIRIT Slovenija - "Pomoč podjetjem zaradi visokih cen energentov v 2023 na podlagi Zakona o pomoči gospodarstvu za omilitev posledic energetske krize (ZPGOPEK)"]]></description>
+										<content:encoded><![CDATA[
+<p>Agencija <strong><a href="https://www.spiritslovenia.si" data-type="URL" data-id="https://www.spiritslovenia.si" target="_blank" rel="noopener">SPIRIT Slovenija</a></strong> v okviru razpisa <em><a href="https://www.spiritslovenia.si/razpis/397" target="_blank" rel="noopener">Pomoč podjetjem zaradi visokih cen energentov v 2023 na podlagi Zakona o pomoči gospodarstvu za omilitev posledic energetske krize (ZPGOPEK)</a></em> nalaga operaterjem in dobaviteljem, da omogočijo elektronsko izmenjavo podatkov  o porabi energentov, skladno z zahtevami razpisa in tehničnimi navodili.</p>
+
+
+
+<span id="more-2438"></span>
+
+
+
+<h3 class="wp-block-heading">Za pomoč pri izdelavi programskega vmesnika (API) se lahko obrnete na 3 TAV</h3>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>Če želite, da za vas pripravimo vse potrebno glede API vmesnika, nam pišite na <a href="mailto:prodaja@3tav.si"><strong>prodaja@3tav.si</strong></a> in poslali vam bomo ponudbo.</p>
+</blockquote>
+
+
+
+<p>V okviru naše rešitve vam nudimo:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>izdelavo</strong> API v skladu s <a href="https://zpgopek-api.spiritslovenia.eu/swagger/index.html" target="_blank" rel="noopener"><em>smernicami SPIRIT Slovenija</em></a>,</li>
+
+
+
+<li><strong>uvoz</strong> produkcijskih podatkov (1. sklop do 31. 7. 2023 in 2. sklop do 31. 1. 2024),</li>
+
+
+
+<li><strong>gostovanje</strong> API-ja na infrastrukturi <em>3TAV Cloud</em> do 28. 2. 2024 (vključuje: dodelitev lastne poddomene *.3tav.si, visoka razpoložljivost, monitoring dostopa),</li>
+
+
+
+<li>izvedba v roku do 31. 7. 2023.</li>
+</ul>
+
+
+
+<p>Obveznosti naročnika:</p>
+
+
+
+<ul class="wp-block-list">
+<li>priprava datoteke s produkcijskimi podatki za obdobje 1. 1. 2023 &#8211; 30. 6. 2023, 2021 in po potrebi 2019; najkasneje do 20. 7. 2023,</li>
+
+
+
+<li>priprava datoteke s produkcijskimi podatki za obdobje 1. 7. 2023 &#8211; 31. 12. 2023.</li>
+</ul>
+
+
+
+<p>Potek izdelave vmesnika:</p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>pripravite svoje podatke</strong> v Excel razpredelnici (na voljo vam je Excel predloga),</li>
+
+
+
+<li><strong>pošljite</strong> Excel datoteko na naš e-naslov,</li>
+
+
+
+<li>sporočimo vam podatke o vašem API vmesniku, ki jih morate posredovati na SPIRIT Slovenija.</li>
+</ol>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h3 class="wp-block-heading">Podrobneje o razpisu &#8211; ZPGOPEK</h3>
+
+
+
+<p>Dne 28. 12. 2022 je stopil v veljavo <a href="http://www.pisrs.si/Pis.web/pregledPredpisa?id=ZAKO8737" target="_blank" rel="noopener"><em>ZPGOPEK</em></a>, ki upravičencem omogoča subvencioniranje povišanih stroškov za energente v letu 2023. Upravičenci pomoč za gospodarstvo uveljavljajo z <a href="https://www.spiritslovenia.si/razpis/397" target="_blank" rel="noopener"><em>vlogo na javni agenciji SPIRIT Slovenija</em></a>.</p>
+
+
+
+<h4 class="wp-block-heading">Elektronska izmenjava podatkov preko aplikacijskega vmesnika (API)</h4>
+
+
+
+<p>Operaterji in dobavitelji morajo skladno s šestim odstavkom 16. člena ZPGOPEK imeti objavljen in dostopen preverjeno pravilno delujoč API.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Rok za izdelavo</strong> API vmesnika je <strong>31. julij 2023</strong>.</li>
+
+
+
+<li><a href="https://zpgopek-api.spiritslovenia.eu/swagger/index.html" target="_blank" rel="noopener"><strong>Tehnična navodila</strong> (specifikacija Swagger)</a></li>
+</ul>
+
+
+
+<p>Podrobnosti o tej zahtevi si preberite na spletni strani razpisa, v okvirčku <em><a href="https://www.spiritslovenia.si/razpis/397" target="_blank" rel="noopener">Informacije za operaterje in dobavitelje ter posredne dobavitelje ZPGOPEK</a></em>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
