@@ -1,10 +1,11 @@
 {
   "name": "3tav.github.io",
+  "type": "module",
   "version": "1.0.0",
   "description": "This is a static web export from our headless CMS [Wordpress](https://wordpress.org/), using [Staatic plugin](https://staatic.com/) and deployed on [Netlify](https://www.netlify.com/).",
   "main": "index.js",
   "dependencies": {
-    "replace-in-file": "^7.1.0"
+    "replace-in-file": "^8.2.0"
   },
   "scripts": {
     "build": "node index.js"

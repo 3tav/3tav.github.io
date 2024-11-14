@@ -1,18 +1,19 @@
-const replace = require("replace-in-file");
+import { replaceInFileSync } from "replace-in-file";
 
-// define fixes
 function replaceFix() {
   const options = {
-    files: ["publication/**/*.html", "publication/**/*.js", "publication/**/*.css", "publication/**/*.json"],
-    from: [
-      /http:\\\/\\\/sl_wordpress.dockerserver.3tav.local/g,
-      /http:\/\/sl_wordpress.dockerserver.3tav.local/g,
+    files: [
+      "publication/**/*.html",
+      // "publication/**/*.js",
+      // "publication/**/*.css",
+      // "publication/**/*.json",
     ],
-    to: ["https:\\/\\/www.3tav.si", "https://www.3tav.si"],
+    from: [/.*<link\ rel="alternate".*/g],
+    to: [""],
   };
 
   try {
-    const results = replace.sync(options);
+    const results = replaceInFileSync(options);
     console.log("Results:", results.filter((e) => e.hasChanged).length);
     return;
   } catch (error) {
@@ -20,5 +21,4 @@ function replaceFix() {
   }
 }
 
-// Run fixes
 replaceFix();
