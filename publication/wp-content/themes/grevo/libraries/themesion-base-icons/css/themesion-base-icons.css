@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'themesion-base-icons';
-  src: url('/wp-content/themes/grevo/libraries/themesion-base-icons/font/themesion-base-icons.eot?92670659');
-  src: url('/wp-content/themes/grevo/libraries/themesion-base-icons/font/themesion-base-icons.eot?92670659#iefix') format('embedded-opentype'),
-       url('/wp-content/themes/grevo/libraries/themesion-base-icons/font/themesion-base-icons.woff2?92670659') format('woff2'),
-       url('/wp-content/themes/grevo/libraries/themesion-base-icons/font/themesion-base-icons.woff?92670659') format('woff'),
-       url('/wp-content/themes/grevo/libraries/themesion-base-icons/font/themesion-base-icons.ttf?92670659') format('truetype'),
-       url('/wp-content/themes/grevo/libraries/themesion-base-icons/font/themesion-base-icons.svg?92670659#themesion-base-icons') format('svg');
+  src: url('../font/themesion-base-icons.eot?92670659');
+  src: url('../font/themesion-base-icons.eot?92670659#iefix') format('embedded-opentype'),
+       url('../font/themesion-base-icons.woff2?92670659') format('woff2'),
+       url('../font/themesion-base-icons.woff?92670659') format('woff'),
+       url('../font/themesion-base-icons.ttf?92670659') format('truetype'),
+       url('../font/themesion-base-icons.svg?92670659#themesion-base-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'themesion-base-icons';
-    src: url('/wp-content/themes/grevo/libraries/themesion-base-icons/font/themesion-base-icons.svg?92670659#themesion-base-icons') format('svg');
+    src: url('../font/themesion-base-icons.svg?92670659#themesion-base-icons') format('svg');
   }
 }
 */

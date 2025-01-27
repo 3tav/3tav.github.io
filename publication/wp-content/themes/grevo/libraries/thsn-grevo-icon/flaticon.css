@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("/wp-content/themes/grevo/libraries/thsn-grevo-icon/flaticon.ttf?fbbc93c6444c602ec990352bef9f9b33") format("truetype"),
-url("/wp-content/themes/grevo/libraries/thsn-grevo-icon/flaticon.woff?fbbc93c6444c602ec990352bef9f9b33") format("woff"),
-url("/wp-content/themes/grevo/libraries/thsn-grevo-icon/flaticon.woff2?fbbc93c6444c602ec990352bef9f9b33") format("woff2"),
-url("/wp-content/themes/grevo/libraries/thsn-grevo-icon/flaticon.eot?fbbc93c6444c602ec990352bef9f9b33#iefix") format("embedded-opentype"),
-url("/wp-content/themes/grevo/libraries/thsn-grevo-icon/flaticon.svg?fbbc93c6444c602ec990352bef9f9b33#flaticon") format("svg");
+    src: url("flaticon.ttf?fbbc93c6444c602ec990352bef9f9b33") format("truetype"),
+url("flaticon.woff?fbbc93c6444c602ec990352bef9f9b33") format("woff"),
+url("flaticon.woff2?fbbc93c6444c602ec990352bef9f9b33") format("woff2"),
+url("flaticon.eot?fbbc93c6444c602ec990352bef9f9b33#iefix") format("embedded-opentype"),
+url("flaticon.svg?fbbc93c6444c602ec990352bef9f9b33#flaticon") format("svg");
 }
 
 i[class^="thsn-grevo-icon-"]:before, i[class*=" thsn-grevo-icon-"]:before {
