@@ -1,4 +1,4 @@
-/*! elementor - v3.18.0 - 20-12-2023 */
+/*! elementor - v3.27.0 - 03-02-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -340,6 +340,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Component: () => (/* reexport safe */ _react__WEBPACK_IMPORTED_MODULE_1__.Component),
 /* harmony export */   Fragment: () => (/* reexport safe */ _react__WEBPACK_IMPORTED_MODULE_1__.Fragment),
 /* harmony export */   Platform: () => (/* reexport safe */ _platform__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   PureComponent: () => (/* reexport safe */ _react__WEBPACK_IMPORTED_MODULE_1__.PureComponent),
 /* harmony export */   RawHTML: () => (/* reexport safe */ _raw_html__WEBPACK_IMPORTED_MODULE_6__["default"]),
 /* harmony export */   StrictMode: () => (/* reexport safe */ _react__WEBPACK_IMPORTED_MODULE_1__.StrictMode),
 /* harmony export */   Suspense: () => (/* reexport safe */ _react__WEBPACK_IMPORTED_MODULE_1__.Suspense),
@@ -429,7 +430,7 @@ const Platform = {
  *
  * This is the same concept as the React Native implementation.
  *
- * @see https://facebook.github.io/react-native/docs/platform-specific-code#platform-module
+ * @see https://reactnative.dev/docs/platform-specific-code#platform-module
  *
  * Here is an example of how to use the select method:
  * @example
@@ -612,6 +613,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Children: () => (/* reexport safe */ react__WEBPACK_IMPORTED_MODULE_0__.Children),
 /* harmony export */   Component: () => (/* reexport safe */ react__WEBPACK_IMPORTED_MODULE_0__.Component),
 /* harmony export */   Fragment: () => (/* reexport safe */ react__WEBPACK_IMPORTED_MODULE_0__.Fragment),
+/* harmony export */   PureComponent: () => (/* reexport safe */ react__WEBPACK_IMPORTED_MODULE_0__.PureComponent),
 /* harmony export */   StrictMode: () => (/* reexport safe */ react__WEBPACK_IMPORTED_MODULE_0__.StrictMode),
 /* harmony export */   Suspense: () => (/* reexport safe */ react__WEBPACK_IMPORTED_MODULE_0__.Suspense),
 /* harmony export */   cloneElement: () => (/* reexport safe */ react__WEBPACK_IMPORTED_MODULE_0__.cloneElement),
@@ -854,6 +856,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
+ * @see https://reactjs.org/docs/react-api.html#reactpurecomponent
+ */
+
+
+/**
  * Concatenate two or more React children objects.
  *
  * @param {...?Object} childrenArguments Array of children arguments (array of arrays/strings/objects) to concatenate.
@@ -920,7 +927,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   renderNativeComponent: () => (/* binding */ renderNativeComponent),
 /* harmony export */   renderStyle: () => (/* binding */ renderStyle)
 /* harmony export */ });
-/* harmony import */ var is_plain_object__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! is-plain-object */ "../node_modules/@wordpress/element/node_modules/is-plain-object/dist/is-plain-object.mjs");
+/* harmony import */ var is_plain_object__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! is-plain-object */ "../node_modules/is-plain-object/dist/is-plain-object.mjs");
 /* harmony import */ var change_case__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! change-case */ "../node_modules/param-case/dist.es2015/index.js");
 /* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/escape-html */ "../node_modules/@wordpress/escape-html/build-module/index.js");
 /* harmony import */ var _react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react */ "react");
@@ -1303,8 +1310,8 @@ function renderNativeComponent(type, props, context, legacyContext = {}) {
  * @return {string} Serialized element
  */
 function renderComponent(Component, props, context, legacyContext = {}) {
-  const instance = new /** @type {import('react').ComponentClass} */
-  Component(props, legacyContext);
+  const instance = new ( /** @type {import('react').ComponentClass} */
+  Component)(props, legacyContext);
   if (typeof
   // Ignore reason: Current prettier reformats parens and mangles type assertion
   // prettier-ignore
@@ -1351,7 +1358,7 @@ function renderAttributes(props) {
     }
     let value = getNormalAttributeValue(key, props[key]);
 
-    // If value is not of serializeable type, skip.
+    // If value is not of serializable type, skip.
     if (!ATTRIBUTES_TYPES.has(typeof value)) {
       continue;
     }
@@ -1640,50 +1647,51 @@ Object.defineProperty(exports, "__esModule", ({
 exports.saveDisabledWidgets = exports.markNoticeViewed = exports.getUsageWidgets = exports.getAdminAppData = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js"));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "../node_modules/@babel/runtime/helpers/asyncToGenerator.js"));
-var saveDisabledWidgets = /*#__PURE__*/function () {
-  var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(widgetsDisabled) {
-    var response, data;
+var saveDisabledWidgets = exports.saveDisabledWidgets = /*#__PURE__*/function () {
+  var _ref = (0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee(widgetsDisabled) {
+    var elementsRestriction,
+      bodyData,
+      _args = arguments;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          _context.prev = 0;
-          _context.next = 3;
+          elementsRestriction = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};
+          _context.prev = 1;
+          bodyData = {
+            action: 'elementor_element_manager_save_disabled_elements',
+            nonce: eElementManagerConfig.nonce,
+            widgets: JSON.stringify(widgetsDisabled)
+          };
+          if (null !== elementsRestriction) {
+            bodyData.elements_restriction = JSON.stringify(elementsRestriction);
+          }
+          _context.next = 6;
           return fetch(eElementManagerConfig.ajaxurl, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: new URLSearchParams({
-              action: 'elementor_element_manager_save_disabled_elements',
-              nonce: eElementManagerConfig.nonce,
-              widgets: JSON.stringify(widgetsDisabled)
-            })
+            body: new URLSearchParams(bodyData)
           });
-        case 3:
-          response = _context.sent;
-          _context.next = 6;
-          return response.json();
         case 6:
-          data = _context.sent;
-          _context.next = 12;
+          _context.next = 11;
           break;
-        case 9:
-          _context.prev = 9;
-          _context.t0 = _context["catch"](0);
-          console.error(_context.t0);
-        case 12:
+        case 8:
+          _context.prev = 8;
+          _context.t0 = _context["catch"](1);
+          console.error(_context.t0); // eslint-disable-line no-console
+        case 11:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 9]]);
+    }, _callee, null, [[1, 8]]);
   }));
   return function saveDisabledWidgets(_x) {
     return _ref.apply(this, arguments);
   };
 }();
-exports.saveDisabledWidgets = saveDisabledWidgets;
-var getAdminAppData = /*#__PURE__*/function () {
-  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+var getAdminAppData = exports.getAdminAppData = /*#__PURE__*/function () {
+  var _ref2 = (0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee2() {
     var response, data;
     return _regenerator.default.wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
@@ -1717,7 +1725,7 @@ var getAdminAppData = /*#__PURE__*/function () {
         case 11:
           _context2.prev = 11;
           _context2.t0 = _context2["catch"](0);
-          console.error(_context2.t0);
+          console.error(_context2.t0); // eslint-disable-line no-console
         case 14:
         case "end":
           return _context2.stop();
@@ -1728,9 +1736,8 @@ var getAdminAppData = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
-exports.getAdminAppData = getAdminAppData;
-var getUsageWidgets = /*#__PURE__*/function () {
-  var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
+var getUsageWidgets = exports.getUsageWidgets = /*#__PURE__*/function () {
+  var _ref3 = (0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee3() {
     var response, data;
     return _regenerator.default.wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
@@ -1764,7 +1771,7 @@ var getUsageWidgets = /*#__PURE__*/function () {
         case 11:
           _context3.prev = 11;
           _context3.t0 = _context3["catch"](0);
-          console.error(_context3.t0);
+          console.error(_context3.t0); // eslint-disable-line no-console
         case 14:
         case "end":
           return _context3.stop();
@@ -1775,9 +1782,8 @@ var getUsageWidgets = /*#__PURE__*/function () {
     return _ref3.apply(this, arguments);
   };
 }();
-exports.getUsageWidgets = getUsageWidgets;
-var markNoticeViewed = /*#__PURE__*/function () {
-  var _ref4 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4(noticeId) {
+var markNoticeViewed = exports.markNoticeViewed = /*#__PURE__*/function () {
+  var _ref4 = (0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee4(noticeId) {
     var response, data;
     return _regenerator.default.wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
@@ -1811,7 +1817,7 @@ var markNoticeViewed = /*#__PURE__*/function () {
         case 11:
           _context4.prev = 11;
           _context4.t0 = _context4["catch"](0);
-          console.error(_context4.t0);
+          console.error(_context4.t0); // eslint-disable-line no-console
         case 14:
         case "end":
           return _context4.stop();
@@ -1822,7 +1828,6 @@ var markNoticeViewed = /*#__PURE__*/function () {
     return _ref4.apply(this, arguments);
   };
 }();
-exports.markNoticeViewed = markNoticeViewed;
 
 /***/ }),
 
@@ -1849,10 +1854,12 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runt
 var _element = __webpack_require__(/*! @wordpress/element */ "../node_modules/@wordpress/element/build-module/index.js");
 var _components = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 var _i18n = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+var _upgradeButton = __webpack_require__(/*! ./upgrade-button */ "../modules/element-manager/assets/js/upgrade-button.js");
 var _api = __webpack_require__(/*! ./api */ "../modules/element-manager/assets/js/api.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; } /* eslint-disable react/prop-types */
-var App = function App() {
+var _rolePermissions = __webpack_require__(/*! ./role-permissions */ "../modules/element-manager/assets/js/role-permissions.js");
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2.default)(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; } /* eslint-disable react/prop-types */
+var App = exports.App = function App() {
   var _useState = (0, _element.useState)(true),
     _useState2 = (0, _slicedToArray2.default)(_useState, 2),
     isLoading = _useState2[0],
@@ -1873,48 +1880,66 @@ var App = function App() {
     _useState10 = (0, _slicedToArray2.default)(_useState9, 2),
     plugins = _useState10[0],
     setPlugins = _useState10[1];
-  var _useState11 = (0, _element.useState)({
+  var _useState11 = (0, _element.useState)([]),
+    _useState12 = (0, _slicedToArray2.default)(_useState11, 2),
+    roles = _useState12[0],
+    setRoles = _useState12[1];
+  var _useState13 = (0, _element.useState)({
       isLoading: false,
       data: null
     }),
-    _useState12 = (0, _slicedToArray2.default)(_useState11, 2),
-    usageWidgets = _useState12[0],
-    setUsageWidgets = _useState12[1];
-  var _useState13 = (0, _element.useState)([]),
     _useState14 = (0, _slicedToArray2.default)(_useState13, 2),
-    widgetsDisabled = _useState14[0],
-    setWidgetsDisabled = _useState14[1];
-  var _useState15 = (0, _element.useState)('widget'),
+    usageWidgets = _useState14[0],
+    setUsageWidgets = _useState14[1];
+  var _useState15 = (0, _element.useState)([]),
     _useState16 = (0, _slicedToArray2.default)(_useState15, 2),
-    sortingColumn = _useState16[0],
-    setSortingColumn = _useState16[1];
-  var _useState17 = (0, _element.useState)('asc'),
+    widgetsDisabled = _useState16[0],
+    setWidgetsDisabled = _useState16[1];
+  var _useState17 = (0, _element.useState)('widget'),
     _useState18 = (0, _slicedToArray2.default)(_useState17, 2),
-    sortingDirection = _useState18[0],
-    setSortingDirection = _useState18[1];
-  var _useState19 = (0, _element.useState)(''),
+    sortingColumn = _useState18[0],
+    setSortingColumn = _useState18[1];
+  var _useState19 = (0, _element.useState)('asc'),
     _useState20 = (0, _slicedToArray2.default)(_useState19, 2),
-    filterByPlugin = _useState20[0],
-    setFilterByPlugin = _useState20[1];
-  var _useState21 = (0, _element.useState)({
+    sortingDirection = _useState20[0],
+    setSortingDirection = _useState20[1];
+  var _useState21 = (0, _element.useState)(''),
+    _useState22 = (0, _slicedToArray2.default)(_useState21, 2),
+    filterByPlugin = _useState22[0],
+    setFilterByPlugin = _useState22[1];
+  var _useState23 = (0, _element.useState)('all'),
+    _useState24 = (0, _slicedToArray2.default)(_useState23, 2),
+    filterByStatus = _useState24[0],
+    setFilterByStatus = _useState24[1];
+  var _useState25 = (0, _element.useState)({
       isSaving: false,
       isUnsavedChanges: false
     }),
-    _useState22 = (0, _slicedToArray2.default)(_useState21, 2),
-    changeProgress = _useState22[0],
-    setChangeProgress = _useState22[1];
-  var _useState23 = (0, _element.useState)(false),
-    _useState24 = (0, _slicedToArray2.default)(_useState23, 2),
-    isConfirmDialogOpen = _useState24[0],
-    setIsConfirmDialogOpen = _useState24[1];
-  var _useState25 = (0, _element.useState)(false),
     _useState26 = (0, _slicedToArray2.default)(_useState25, 2),
-    isSnackbarOpen = _useState26[0],
-    setIsSnackbarOpen = _useState26[1];
-  var _useState27 = (0, _element.useState)(null),
+    changeProgress = _useState26[0],
+    setChangeProgress = _useState26[1];
+  var _useState27 = (0, _element.useState)(false),
     _useState28 = (0, _slicedToArray2.default)(_useState27, 2),
-    noticeData = _useState28[0],
-    setNoticeData = _useState28[1];
+    isConfirmDialogOpen = _useState28[0],
+    setIsConfirmDialogOpen = _useState28[1];
+  var _useState29 = (0, _element.useState)(false),
+    _useState30 = (0, _slicedToArray2.default)(_useState29, 2),
+    isSnackbarOpen = _useState30[0],
+    setIsSnackbarOpen = _useState30[1];
+  var _useState31 = (0, _element.useState)(null),
+    _useState32 = (0, _slicedToArray2.default)(_useState31, 2),
+    noticeData = _useState32[0],
+    setNoticeData = _useState32[1];
+  var _useState33 = (0, _element.useState)(null),
+    _useState34 = (0, _slicedToArray2.default)(_useState33, 2),
+    widgetsRoleRestrictions = _useState34[0],
+    setWidgetsRoleRestrictions = _useState34[1];
+  var _useState35 = (0, _element.useState)([]),
+    _useState36 = (0, _slicedToArray2.default)(_useState35, 2),
+    promotionData = _useState36[0],
+    setPromotionData = _useState36[1];
+  var managerPermissions = promotionData.manager_permissions,
+    elementManager = promotionData.element_manager;
   var getWidgetUsage = function getWidgetUsage(widgetName) {
     if (!usageWidgets.data || !usageWidgets.data.hasOwnProperty(widgetName)) {
       return 0;
@@ -1928,6 +1953,14 @@ var App = function App() {
     if ('' !== filterByPlugin) {
       filteredWidgets = filteredWidgets.filter(function (widget) {
         return widget.plugin.toLowerCase() === filterByPlugin.toLowerCase();
+      });
+    }
+    if ('all' !== filterByStatus) {
+      filteredWidgets = filteredWidgets.filter(function (widget) {
+        if ('active' === filterByStatus) {
+          return !widgetsDisabled.includes(widget.name);
+        }
+        return widgetsDisabled.includes(widget.name);
       });
     }
     filteredWidgets.sort(function (a, b) {
@@ -1950,7 +1983,7 @@ var App = function App() {
       return aValue > bValue ? -1 : 1;
     });
     return filteredWidgets;
-  }, [widgets, searchKeyword, sortingColumn, sortingDirection, filterByPlugin, usageWidgets]);
+  }, [widgets, searchKeyword, sortingColumn, sortingDirection, filterByPlugin, usageWidgets, filterByStatus, widgetsDisabled]);
   var getSortingIndicatorClasses = function getSortingIndicatorClasses(column) {
     if (sortingColumn !== column) {
       return '';
@@ -1973,7 +2006,7 @@ var App = function App() {
     }
   };
   var onSaveClicked = /*#__PURE__*/function () {
-    var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+    var _ref = (0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee() {
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -1982,7 +2015,7 @@ var App = function App() {
               isSaving: true
             }));
             _context.next = 4;
-            return (0, _api.saveDisabledWidgets)(widgetsDisabled);
+            return (0, _api.saveDisabledWidgets)(widgetsDisabled, widgetsRoleRestrictions);
           case 4:
             setChangeProgress(_objectSpread(_objectSpread({}, changeProgress), {}, {
               isSaving: false,
@@ -2011,7 +2044,7 @@ var App = function App() {
     setWidgetsDisabled([]);
   };
   var onScanUsageElementsClicked = /*#__PURE__*/function () {
-    var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+    var _ref2 = (0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee2() {
       var data;
       return _regenerator.default.wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
@@ -2055,7 +2088,8 @@ var App = function App() {
   };
   (0, _element.useEffect)(function () {
     var onLoading = /*#__PURE__*/function () {
-      var _ref4 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
+      var _ref4 = (0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee3() {
+        var _appData$additional_d, _appData$additional_d2;
         var appData, pluginsData;
         return _regenerator.default.wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
@@ -2068,6 +2102,13 @@ var App = function App() {
               setWidgetsDisabled(appData.disabled_elements);
               setWidgets(appData.widgets);
               setPromotionWidgets(appData.promotion_widgets);
+              setPromotionData(appData.promotion_data);
+              if ((_appData$additional_d = appData.additional_data) !== null && _appData$additional_d !== void 0 && _appData$additional_d.roles) {
+                setRoles(appData.additional_data.roles);
+              }
+              if ((_appData$additional_d2 = appData.additional_data) !== null && _appData$additional_d2 !== void 0 && _appData$additional_d2.role_restrictions) {
+                setWidgetsRoleRestrictions(appData.additional_data.role_restrictions);
+              }
               pluginsData = appData.plugins.map(function (plugin) {
                 return {
                   label: plugin,
@@ -2080,7 +2121,7 @@ var App = function App() {
               });
               setPlugins(pluginsData);
               setIsLoading(false);
-            case 11:
+            case 14:
             case "end":
               return _context3.stop();
           }
@@ -2099,7 +2140,21 @@ var App = function App() {
     setChangeProgress(_objectSpread(_objectSpread({}, changeProgress), {}, {
       isUnsavedChanges: true
     }));
-  }, [widgetsDisabled]);
+  }, [widgetsDisabled, widgetsRoleRestrictions]);
+  (0, _element.useEffect)(function () {
+    var handleBeforeUnload = function handleBeforeUnload(event) {
+      event.preventDefault();
+      event.returnValue = '';
+    };
+    if (changeProgress.isUnsavedChanges) {
+      window.addEventListener('beforeunload', handleBeforeUnload);
+    } else {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    }
+    return function () {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [changeProgress.isUnsavedChanges]);
   if (isLoading) {
     return /*#__PURE__*/_react.default.createElement(_components.Flex, {
       justify: 'center',
@@ -2122,11 +2177,7 @@ var App = function App() {
     href: "https://go.elementor.com/wp-dash-element-manager/",
     rel: 'noreferrer',
     target: '_blank'
-  }, (0, _i18n.__)('Learn More', 'elementor'))), !noticeData.is_viewed && /*#__PURE__*/_react.default.createElement("p", {
-    style: {
-      margin: '20px -15px'
-    }
-  }, /*#__PURE__*/_react.default.createElement(_components.Notice, {
+  }, (0, _i18n.__)('Learn More', 'elementor'))), !noticeData.is_viewed && /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement(_components.Notice, {
     onRemove: function onRemove() {
       (0, _api.markNoticeViewed)(noticeData.notice_id);
       setNoticeData(_objectSpread(_objectSpread({}, noticeData), {}, {
@@ -2157,12 +2208,34 @@ var App = function App() {
     },
     __nextHasNoMarginBottom: true,
     onChange: setSearchKeyword
-  }), /*#__PURE__*/_react.default.createElement(_components.SelectControl, {
+  }), /*#__PURE__*/_react.default.createElement(_components.FlexItem, {
+    style: {
+      maxWidth: '130px'
+    }
+  }, /*#__PURE__*/_react.default.createElement(_components.SelectControl, {
     onChange: setFilterByPlugin,
     size: '__unstable-large',
     __nextHasNoMarginBottom: true,
     options: plugins
-  }), /*#__PURE__*/_react.default.createElement("hr", {
+  })), /*#__PURE__*/_react.default.createElement(_components.FlexItem, {
+    style: {
+      maxWidth: '130px'
+    }
+  }, /*#__PURE__*/_react.default.createElement(_components.SelectControl, {
+    onChange: setFilterByStatus,
+    size: '__unstable-large',
+    __nextHasNoMarginBottom: true,
+    options: [{
+      label: (0, _i18n.__)('All Statuses', 'elementor'),
+      value: 'all'
+    }, {
+      label: (0, _i18n.__)('Active', 'elementor'),
+      value: 'active'
+    }, {
+      label: (0, _i18n.__)('Inactive', 'elementor'),
+      value: 'inactive'
+    }]
+  })), /*#__PURE__*/_react.default.createElement("hr", {
     style: {
       height: '30px',
       margin: '0 5px',
@@ -2233,12 +2306,33 @@ var App = function App() {
   }), /*#__PURE__*/_react.default.createElement("span", {
     className: "sorting-indicator desc",
     "aria-hidden": "true"
-  })))), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Plugin', 'elementor')))), /*#__PURE__*/_react.default.createElement("tbody", null, sortedAndFilteredWidgets.map(function (widget) {
+  })))), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Plugin', 'elementor')), /*#__PURE__*/_react.default.createElement("th", null, /*#__PURE__*/_react.default.createElement(_components.Flex, {
+    justify: 'flex-start',
+    gap: 0
+  }, /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, (0, _i18n.__)('Permission', 'elementor')), /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, /*#__PURE__*/_react.default.createElement(_components.Tooltip, {
+    placement: 'top',
+    delay: 100,
+    text: (0, _i18n.__)('Choose which users will have access to each widget.', 'elementor')
+  }, /*#__PURE__*/_react.default.createElement(_components.Button, {
+    icon: 'info-outline',
+    iconSize: 16
+  }))), null === widgetsRoleRestrictions && /*#__PURE__*/_react.default.createElement(_components.FlexItem, {
+    style: {
+      marginInlineStart: '10px'
+    }
+  }, /*#__PURE__*/_react.default.createElement(_upgradeButton.UpgradeButton, {
+    href: promotionWidgets.length ? managerPermissions.pro.url : managerPermissions.advanced.url,
+    size: 'small',
+    text: promotionWidgets.length ? managerPermissions.pro.text : managerPermissions.advanced.text
+  })))))), /*#__PURE__*/_react.default.createElement("tbody", null, sortedAndFilteredWidgets.map(function (widget) {
     return /*#__PURE__*/_react.default.createElement("tr", {
-      key: widget.name
+      key: widget.name,
+      "data-key-id": widget.name
     }, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("i", {
       style: {
-        marginInlineEnd: '5px'
+        marginInlineEnd: '5px',
+        marginInlineStart: '0',
+        display: 'inline-block'
       },
       className: "".concat(widget.icon)
     }), " ", widget.title), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement(_components.ToggleControl, {
@@ -2255,25 +2349,33 @@ var App = function App() {
       }
     })), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement(UsageTimesColumn, {
       widgetName: widget.name
-    })), /*#__PURE__*/_react.default.createElement("td", null, widget.plugin));
+    })), /*#__PURE__*/_react.default.createElement("td", null, widget.plugin), /*#__PURE__*/_react.default.createElement("td", null, null !== widgetsRoleRestrictions && !widgetsDisabled.includes(widget.name) ? /*#__PURE__*/_react.default.createElement(_rolePermissions.RolePermissions, {
+      widgetName: widget.name,
+      roles: roles,
+      widgetsRoleRestrictions: widgetsRoleRestrictions,
+      setWidgetsRoleRestrictions: setWidgetsRoleRestrictions
+    }) : /*#__PURE__*/_react.default.createElement(_rolePermissions.EditButtonDisabled, null)));
   })))), promotionWidgets.length > 0 && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.PanelRow, null, /*#__PURE__*/_react.default.createElement(_components.Flex, {
     style: {
       marginTop: '40px',
       marginBottom: '20px'
     }
-  }, /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, /*#__PURE__*/_react.default.createElement("h3", null, (0, _i18n.__)('Elementor Pro Elements', 'elementor')), /*#__PURE__*/_react.default.createElement("p", null, (0, _i18n.__)('Unleash the full power of Elementor\'s features and web creation tools.', 'elementor'))), /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, /*#__PURE__*/_react.default.createElement(_components.Button, {
-    variant: "primary",
-    href: "https://go.elementor.com/go-pro-element-manager/",
-    target: "_blank",
-    rel: 'noreferrer',
-    style: {
-      background: 'var(--e-a-btn-bg-accent, #93003f)'
-    }
-  }, (0, _i18n.__)('Upgrade Now', 'elementor'))))), /*#__PURE__*/_react.default.createElement(_components.PanelRow, null, /*#__PURE__*/_react.default.createElement("table", {
+  }, /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, /*#__PURE__*/_react.default.createElement("h3", null, (0, _i18n.__)('Elementor Pro Elements', 'elementor')), /*#__PURE__*/_react.default.createElement("p", null, (0, _i18n.__)('Unleash the full power of Elementor\'s features and web creation tools.', 'elementor'))), /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, /*#__PURE__*/_react.default.createElement(_upgradeButton.UpgradeButton, {
+    href: elementManager.url,
+    text: elementManager.text
+  })))), /*#__PURE__*/_react.default.createElement(_components.PanelRow, null, /*#__PURE__*/_react.default.createElement("table", {
     className: 'wp-list-table widefat fixed striped table-view-list'
   }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
     className: "manage-column"
-  }, /*#__PURE__*/_react.default.createElement("span", null, (0, _i18n.__)('Element', 'elementor'))), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Status', 'elementor')), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Usage', 'elementor')), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Plugin', 'elementor')))), /*#__PURE__*/_react.default.createElement("tbody", null, promotionWidgets.map(function (widget) {
+  }, /*#__PURE__*/_react.default.createElement("span", null, (0, _i18n.__)('Element', 'elementor'))), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Status', 'elementor')), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Usage', 'elementor')), /*#__PURE__*/_react.default.createElement("th", null, (0, _i18n.__)('Plugin', 'elementor')), /*#__PURE__*/_react.default.createElement("th", null, /*#__PURE__*/_react.default.createElement(_components.Flex, {
+    justify: 'flex-start'
+  }, /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, (0, _i18n.__)('Permission', 'elementor')), /*#__PURE__*/_react.default.createElement(_components.FlexItem, null, /*#__PURE__*/_react.default.createElement(_components.Tooltip, {
+    placement: 'top',
+    delay: 100,
+    text: (0, _i18n.__)('Choose which role will have access to a specific widget.', 'elementor')
+  }, /*#__PURE__*/_react.default.createElement(_components.Button, {
+    icon: 'info-outline'
+  }))))))), /*#__PURE__*/_react.default.createElement("tbody", null, promotionWidgets.map(function (widget) {
     return /*#__PURE__*/_react.default.createElement("tr", {
       key: widget.name
     }, /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("i", {
@@ -2285,7 +2387,7 @@ var App = function App() {
       __nextHasNoMarginBottom: true,
       checked: false,
       disabled: true
-    })), /*#__PURE__*/_react.default.createElement("td", null), /*#__PURE__*/_react.default.createElement("td", null, (0, _i18n.__)('Elementor Pro', 'elementor')));
+    })), /*#__PURE__*/_react.default.createElement("td", null), /*#__PURE__*/_react.default.createElement("td", null, (0, _i18n.__)('Elementor Pro', 'elementor')), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement(_rolePermissions.EditButtonDisabled, null)));
   }))))))), isConfirmDialogOpen && /*#__PURE__*/_react.default.createElement(_components.Modal, {
     title: (0, _i18n.__)('Sure you want to save these changes?', 'elementor'),
     size: 'small',
@@ -2334,7 +2436,166 @@ var App = function App() {
     }
   }, (0, _i18n.__)('We saved your changes.', 'elementor'))));
 };
-exports.App = App;
+
+/***/ }),
+
+/***/ "../modules/element-manager/assets/js/role-permissions.js":
+/*!****************************************************************!*\
+  !*** ../modules/element-manager/assets/js/role-permissions.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.RolePermissions = exports.EditButtonDisabled = void 0;
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "../node_modules/@babel/runtime/helpers/defineProperty.js"));
+var _components = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+var _i18n = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2.default)(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; } /* eslint-disable react/prop-types */
+var toggleRoleRestrictions = function toggleRoleRestrictions(widgetName, roleId, widgetsRoleRestrictions, setWidgetsRoleRestrictions) {
+  var widgetRoleRestrictions = widgetsRoleRestrictions[widgetName] || [];
+  if (widgetRoleRestrictions.includes(roleId)) {
+    widgetRoleRestrictions.splice(widgetRoleRestrictions.indexOf(roleId), 1);
+  } else {
+    widgetRoleRestrictions.push(roleId);
+  }
+
+  // TODO: Remove the object from the state if it's empty
+  setWidgetsRoleRestrictions(_objectSpread(_objectSpread({}, widgetsRoleRestrictions), {}, (0, _defineProperty2.default)({}, widgetName, widgetRoleRestrictions)));
+};
+var RolesList = function RolesList(props) {
+  var roles = props.roles,
+    widgetRoleRestrictions = props.widgetRoleRestrictions;
+  var rolesEnables = roles.filter(function (role) {
+    return !widgetRoleRestrictions.includes(role.id);
+  });
+  if (!rolesEnables.length) {
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "(", (0, _i18n.__)('Admin', 'elementor'), ")");
+  }
+  if (rolesEnables.length === roles.length) {
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "(", (0, _i18n.__)('All Roles', 'elementor'), ")");
+  }
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "(", rolesEnables.map(function (role) {
+    return role.name;
+  }).join(', '), ")");
+};
+var RolePermissions = exports.RolePermissions = function RolePermissions(props) {
+  var roles = props.roles,
+    widgetName = props.widgetName,
+    widgetsRoleRestrictions = props.widgetsRoleRestrictions,
+    setWidgetsRoleRestrictions = props.setWidgetsRoleRestrictions;
+  var widgetRoleRestrictions = widgetsRoleRestrictions[widgetName] || [];
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.Dropdown, {
+    className: 'my-container-class-name',
+    contentClassName: 'my-dropdown-content-classname',
+    popoverProps: {
+      placement: 'bottom-start'
+    },
+    renderToggle: function renderToggle(_ref) {
+      var isOpen = _ref.isOpen,
+        onToggle = _ref.onToggle;
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.Button, {
+        variant: 'link',
+        onClick: onToggle,
+        "aria-expanded": isOpen,
+        style: {
+          textDecoration: 'none'
+        }
+      }, (0, _i18n.__)('Edit', 'elementor')), ' ', /*#__PURE__*/_react.default.createElement("span", {
+        style: {
+          color: 'var(--e-a-color-txt-muted)'
+        }
+      }, /*#__PURE__*/_react.default.createElement(RolesList, {
+        roles: roles,
+        widgetRoleRestrictions: widgetRoleRestrictions
+      })));
+    },
+    renderContent: function renderContent() {
+      var isAllChecked = roles.every(function (role) {
+        return !widgetRoleRestrictions.includes(role.id);
+      });
+      var isIndeterminate = !isAllChecked && roles.some(function (role) {
+        return !widgetRoleRestrictions.includes(role.id);
+      });
+      return /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          minWidth: '150px',
+          paddingInline: '10px',
+          paddingBlockStart: '10px'
+        }
+      }, /*#__PURE__*/_react.default.createElement(_components.CheckboxControl, {
+        checked: isAllChecked,
+        indeterminate: isIndeterminate,
+        label: 'All',
+        onChange: function onChange(value) {
+          if (value) {
+            setWidgetsRoleRestrictions(_objectSpread(_objectSpread({}, widgetsRoleRestrictions), {}, (0, _defineProperty2.default)({}, widgetName, [])));
+          } else {
+            setWidgetsRoleRestrictions(_objectSpread(_objectSpread({}, widgetsRoleRestrictions), {}, (0, _defineProperty2.default)({}, widgetName, roles.map(function (role) {
+              return role.id;
+            }))));
+          }
+        }
+      }), roles.map(function (role) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: role.id
+        }, /*#__PURE__*/_react.default.createElement(_components.CheckboxControl, {
+          checked: !widgetRoleRestrictions.includes(role.id),
+          label: role.name,
+          onChange: function onChange() {
+            toggleRoleRestrictions(widgetName, role.id, widgetsRoleRestrictions, setWidgetsRoleRestrictions);
+          }
+        }));
+      }));
+    }
+  }));
+};
+var EditButtonDisabled = exports.EditButtonDisabled = function EditButtonDisabled() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.Button, {
+    variant: "link",
+    disabled: true,
+    style: {
+      textDecoration: 'none'
+    }
+  }, (0, _i18n.__)('Edit', 'elementor')));
+};
+
+/***/ }),
+
+/***/ "../modules/element-manager/assets/js/upgrade-button.js":
+/*!**************************************************************!*\
+  !*** ../modules/element-manager/assets/js/upgrade-button.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.UpgradeButton = void 0;
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "../node_modules/@babel/runtime/helpers/extends.js"));
+var _components = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+var UpgradeButton = exports.UpgradeButton = function UpgradeButton(props) {
+  return /*#__PURE__*/_react.default.createElement(_components.Button, (0, _extends2.default)({}, props, {
+    variant: "primary",
+    target: "_blank",
+    rel: 'noreferrer',
+    style: {
+      background: 'var(--e-a-btn-bg-accent, #93003f)'
+    }
+  }));
+};
 
 /***/ }),
 
@@ -2349,7 +2610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   dotCase: () => (/* binding */ dotCase)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "../node_modules/dot-case/node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "../node_modules/tslib/tslib.es6.mjs");
 /* harmony import */ var no_case__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! no-case */ "../node_modules/no-case/dist.es2015/index.js");
 
 
@@ -2481,7 +2742,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   paramCase: () => (/* binding */ paramCase)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "../node_modules/param-case/node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "../node_modules/tslib/tslib.es6.mjs");
 /* harmony import */ var dot_case__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dot-case */ "../node_modules/dot-case/dist.es2015/index.js");
 
 
@@ -2587,10 +2848,10 @@ module.exports = wp.i18n;
   \******************************************************************/
 /***/ ((module) => {
 
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
 }
 module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -2602,8 +2863,8 @@ module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exp
   \****************************************************************/
 /***/ ((module) => {
 
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
+function _arrayWithHoles(r) {
+  if (Array.isArray(r)) return r;
 }
 module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -2616,8 +2877,8 @@ module.exports = _arrayWithHoles, module.exports.__esModule = true, module.expor
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "../node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+function _arrayWithoutHoles(r) {
+  if (Array.isArray(r)) return arrayLikeToArray(r);
 }
 module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -2629,33 +2890,28 @@ module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.ex
   \******************************************************************/
 /***/ ((module) => {
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+function asyncGeneratorStep(n, t, e, r, o, a, c) {
   try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
+    var i = n[a](c),
+      u = i.value;
+  } catch (n) {
+    return void e(n);
   }
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
+  i.done ? t(u) : Promise.resolve(u).then(r, o);
 }
-function _asyncToGenerator(fn) {
+function _asyncToGenerator(n) {
   return function () {
-    var self = this,
-      args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+    var t = this,
+      e = arguments;
+    return new Promise(function (r, o) {
+      var a = n.apply(t, e);
+      function _next(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "next", n);
       }
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      function _throw(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "throw", n);
       }
-      _next(undefined);
+      _next(void 0);
     });
   };
 }
@@ -2670,21 +2926,34 @@ module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exp
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var toPropertyKey = __webpack_require__(/*! ./toPropertyKey.js */ "../node_modules/@babel/runtime/helpers/toPropertyKey.js");
-function _defineProperty(obj, key, value) {
-  key = toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
+function _defineProperty(e, r, t) {
+  return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
 }
 module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime/helpers/extends.js":
+/*!*********************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/extends.js ***!
+  \*********************************************************/
+/***/ ((module) => {
+
+function _extends() {
+  return module.exports = _extends = Object.assign ? Object.assign.bind() : function (n) {
+    for (var e = 1; e < arguments.length; e++) {
+      var t = arguments[e];
+      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+    }
+    return n;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports, _extends.apply(null, arguments);
+}
+module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -2694,9 +2963,9 @@ module.exports = _defineProperty, module.exports.__esModule = true, module.expor
   \***********************************************************************/
 /***/ ((module) => {
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
   };
 }
 module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -2709,8 +2978,8 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
   \*****************************************************************/
 /***/ ((module) => {
 
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+function _iterableToArray(r) {
+  if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
 }
 module.exports = _iterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -2895,7 +3164,7 @@ function _regeneratorRuntime() {
   function makeInvokeMethod(e, r, n) {
     var o = h;
     return function (i, a) {
-      if (o === f) throw new Error("Generator is already running");
+      if (o === f) throw Error("Generator is already running");
       if (o === s) {
         if ("throw" === i) throw a;
         return {
@@ -3037,7 +3306,7 @@ function _regeneratorRuntime() {
           } else if (c) {
             if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
           } else {
-            if (!u) throw new Error("try statement without catch or finally");
+            if (!u) throw Error("try statement without catch or finally");
             if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
           }
         }
@@ -3077,7 +3346,7 @@ function _regeneratorRuntime() {
           return o;
         }
       }
-      throw new Error("illegal catch attempt");
+      throw Error("illegal catch attempt");
     },
     delegateYield: function delegateYield(e, r, n) {
       return this.delegate = {
@@ -3102,8 +3371,8 @@ var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles.js */ "../node_mod
 var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit.js */ "../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
 var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
 var nonIterableRest = __webpack_require__(/*! ./nonIterableRest.js */ "../node_modules/@babel/runtime/helpers/nonIterableRest.js");
-function _slicedToArray(arr, i) {
-  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+function _slicedToArray(r, e) {
+  return arrayWithHoles(r) || iterableToArrayLimit(r, e) || unsupportedIterableToArray(r, e) || nonIterableRest();
 }
 module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -3119,8 +3388,8 @@ var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ "../no
 var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ "../node_modules/@babel/runtime/helpers/iterableToArray.js");
 var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
 var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ "../node_modules/@babel/runtime/helpers/nonIterableSpread.js");
-function _toConsumableArray(arr) {
-  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+function _toConsumableArray(r) {
+  return arrayWithoutHoles(r) || iterableToArray(r) || unsupportedIterableToArray(r) || nonIterableSpread();
 }
 module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -3133,17 +3402,17 @@ module.exports = _toConsumableArray, module.exports.__esModule = true, module.ex
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (hint === "string" ? String : Number)(input);
+  return ("string" === r ? String : Number)(t);
 }
-module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -3155,11 +3424,11 @@ module.exports = _toPrimitive, module.exports.__esModule = true, module.exports[
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
 var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ "../node_modules/@babel/runtime/helpers/toPrimitive.js");
-function _toPropertyKey(arg) {
-  var key = toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : i + "";
 }
-module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -3172,11 +3441,11 @@ module.exports = _toPropertyKey, module.exports.__esModule = true, module.export
 function _typeof(o) {
   "@babel/helpers - typeof";
 
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+  return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
     return typeof o;
   } : function (o) {
     return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(o);
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -3189,13 +3458,12 @@ module.exports = _typeof, module.exports.__esModule = true, module.exports["defa
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "../node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? arrayLikeToArray(r, a) : void 0;
+  }
 }
 module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -3226,10 +3494,10 @@ try {
 
 /***/ }),
 
-/***/ "../node_modules/@wordpress/element/node_modules/is-plain-object/dist/is-plain-object.mjs":
-/*!************************************************************************************************!*\
-  !*** ../node_modules/@wordpress/element/node_modules/is-plain-object/dist/is-plain-object.mjs ***!
-  \************************************************************************************************/
+/***/ "../node_modules/is-plain-object/dist/is-plain-object.mjs":
+/*!****************************************************************!*\
+  !*** ../node_modules/is-plain-object/dist/is-plain-object.mjs ***!
+  \****************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3275,10 +3543,10 @@ function isPlainObject(o) {
 
 /***/ }),
 
-/***/ "../node_modules/dot-case/node_modules/tslib/tslib.es6.mjs":
-/*!*****************************************************************!*\
-  !*** ../node_modules/dot-case/node_modules/tslib/tslib.es6.mjs ***!
-  \*****************************************************************/
+/***/ "../node_modules/tslib/tslib.es6.mjs":
+/*!*******************************************!*\
+  !*** ../node_modules/tslib/tslib.es6.mjs ***!
+  \*******************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3309,6 +3577,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   __propKey: () => (/* binding */ __propKey),
 /* harmony export */   __read: () => (/* binding */ __read),
 /* harmony export */   __rest: () => (/* binding */ __rest),
+/* harmony export */   __rewriteRelativeImportExtension: () => (/* binding */ __rewriteRelativeImportExtension),
 /* harmony export */   __runInitializers: () => (/* binding */ __runInitializers),
 /* harmony export */   __setFunctionName: () => (/* binding */ __setFunctionName),
 /* harmony export */   __spread: () => (/* binding */ __spread),
@@ -3331,7 +3600,7 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol */
+/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
 
 var extendStatics = function(d, b) {
   extendStatics = Object.setPrototypeOf ||
@@ -3442,8 +3711,8 @@ function __awaiter(thisArg, _arguments, P, generator) {
 }
 
 function __generator(thisArg, body) {
-  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+  return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
   function verb(n) { return function (v) { return step([n, v]); }; }
   function step(op) {
       if (f) throw new TypeError("Generator is already executing.");
@@ -3547,8 +3816,9 @@ function __await(v) {
 function __asyncGenerator(thisArg, _arguments, generator) {
   if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
   var g = generator.apply(thisArg, _arguments || []), i, q = [];
-  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-  function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+  return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function () { return this; }, i;
+  function awaitReturn(f) { return function (v) { return Promise.resolve(v).then(f, reject); }; }
+  function verb(n, f) { if (g[n]) { i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; if (f) i[n] = f(i[n]); } }
   function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
   function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
   function fulfill(value) { resume("next", value); }
@@ -3581,426 +3851,19 @@ var __setModuleDefault = Object.create ? (function(o, v) {
   o["default"] = v;
 };
 
-function __importStar(mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  __setModuleDefault(result, mod);
-  return result;
-}
-
-function __importDefault(mod) {
-  return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-function __classPrivateFieldGet(receiver, state, kind, f) {
-  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-  return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-}
-
-function __classPrivateFieldSet(receiver, state, value, kind, f) {
-  if (kind === "m") throw new TypeError("Private method is not writable");
-  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-  return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-}
-
-function __classPrivateFieldIn(state, receiver) {
-  if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
-  return typeof state === "function" ? receiver === state : state.has(receiver);
-}
-
-function __addDisposableResource(env, value, async) {
-  if (value !== null && value !== void 0) {
-    if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
-    var dispose;
-    if (async) {
-        if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
-        dispose = value[Symbol.asyncDispose];
-    }
-    if (dispose === void 0) {
-        if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
-        dispose = value[Symbol.dispose];
-    }
-    if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
-    env.stack.push({ value: value, dispose: dispose, async: async });
-  }
-  else if (async) {
-    env.stack.push({ async: true });
-  }
-  return value;
-}
-
-var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
-  var e = new Error(message);
-  return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
-};
-
-function __disposeResources(env) {
-  function fail(e) {
-    env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
-    env.hasError = true;
-  }
-  function next() {
-    while (env.stack.length) {
-      var rec = env.stack.pop();
-      try {
-        var result = rec.dispose && rec.dispose.call(rec.value);
-        if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
-      }
-      catch (e) {
-          fail(e);
-      }
-    }
-    if (env.hasError) throw env.error;
-  }
-  return next();
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  __extends,
-  __assign,
-  __rest,
-  __decorate,
-  __param,
-  __metadata,
-  __awaiter,
-  __generator,
-  __createBinding,
-  __exportStar,
-  __values,
-  __read,
-  __spread,
-  __spreadArrays,
-  __spreadArray,
-  __await,
-  __asyncGenerator,
-  __asyncDelegator,
-  __asyncValues,
-  __makeTemplateObject,
-  __importStar,
-  __importDefault,
-  __classPrivateFieldGet,
-  __classPrivateFieldSet,
-  __classPrivateFieldIn,
-  __addDisposableResource,
-  __disposeResources,
-});
-
-
-/***/ }),
-
-/***/ "../node_modules/param-case/node_modules/tslib/tslib.es6.mjs":
-/*!*******************************************************************!*\
-  !*** ../node_modules/param-case/node_modules/tslib/tslib.es6.mjs ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __addDisposableResource: () => (/* binding */ __addDisposableResource),
-/* harmony export */   __assign: () => (/* binding */ __assign),
-/* harmony export */   __asyncDelegator: () => (/* binding */ __asyncDelegator),
-/* harmony export */   __asyncGenerator: () => (/* binding */ __asyncGenerator),
-/* harmony export */   __asyncValues: () => (/* binding */ __asyncValues),
-/* harmony export */   __await: () => (/* binding */ __await),
-/* harmony export */   __awaiter: () => (/* binding */ __awaiter),
-/* harmony export */   __classPrivateFieldGet: () => (/* binding */ __classPrivateFieldGet),
-/* harmony export */   __classPrivateFieldIn: () => (/* binding */ __classPrivateFieldIn),
-/* harmony export */   __classPrivateFieldSet: () => (/* binding */ __classPrivateFieldSet),
-/* harmony export */   __createBinding: () => (/* binding */ __createBinding),
-/* harmony export */   __decorate: () => (/* binding */ __decorate),
-/* harmony export */   __disposeResources: () => (/* binding */ __disposeResources),
-/* harmony export */   __esDecorate: () => (/* binding */ __esDecorate),
-/* harmony export */   __exportStar: () => (/* binding */ __exportStar),
-/* harmony export */   __extends: () => (/* binding */ __extends),
-/* harmony export */   __generator: () => (/* binding */ __generator),
-/* harmony export */   __importDefault: () => (/* binding */ __importDefault),
-/* harmony export */   __importStar: () => (/* binding */ __importStar),
-/* harmony export */   __makeTemplateObject: () => (/* binding */ __makeTemplateObject),
-/* harmony export */   __metadata: () => (/* binding */ __metadata),
-/* harmony export */   __param: () => (/* binding */ __param),
-/* harmony export */   __propKey: () => (/* binding */ __propKey),
-/* harmony export */   __read: () => (/* binding */ __read),
-/* harmony export */   __rest: () => (/* binding */ __rest),
-/* harmony export */   __runInitializers: () => (/* binding */ __runInitializers),
-/* harmony export */   __setFunctionName: () => (/* binding */ __setFunctionName),
-/* harmony export */   __spread: () => (/* binding */ __spread),
-/* harmony export */   __spreadArray: () => (/* binding */ __spreadArray),
-/* harmony export */   __spreadArrays: () => (/* binding */ __spreadArrays),
-/* harmony export */   __values: () => (/* binding */ __values),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/******************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol */
-
-var extendStatics = function(d, b) {
-  extendStatics = Object.setPrototypeOf ||
-      ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-      function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-  return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-  if (typeof b !== "function" && b !== null)
-      throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-  extendStatics(d, b);
-  function __() { this.constructor = d; }
-  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-  __assign = Object.assign || function __assign(t) {
-      for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-      return t;
-  }
-  return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-      t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function")
-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-              t[p[i]] = s[p[i]];
-      }
-  return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-  else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-  return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
-  function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
-  var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
-  var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
-  var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
-  var _, done = false;
-  for (var i = decorators.length - 1; i >= 0; i--) {
-      var context = {};
-      for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
-      for (var p in contextIn.access) context.access[p] = contextIn.access[p];
-      context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
-      var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
-      if (kind === "accessor") {
-          if (result === void 0) continue;
-          if (result === null || typeof result !== "object") throw new TypeError("Object expected");
-          if (_ = accept(result.get)) descriptor.get = _;
-          if (_ = accept(result.set)) descriptor.set = _;
-          if (_ = accept(result.init)) initializers.unshift(_);
-      }
-      else if (_ = accept(result)) {
-          if (kind === "field") initializers.unshift(_);
-          else descriptor[key] = _;
-      }
-  }
-  if (target) Object.defineProperty(target, contextIn.name, descriptor);
-  done = true;
-};
-
-function __runInitializers(thisArg, initializers, value) {
-  var useValue = arguments.length > 2;
-  for (var i = 0; i < initializers.length; i++) {
-      value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
-  }
-  return useValue ? value : void 0;
-};
-
-function __propKey(x) {
-  return typeof x === "symbol" ? x : "".concat(x);
-};
-
-function __setFunctionName(f, name, prefix) {
-  if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
-  return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
-};
-
-function __metadata(metadataKey, metadataValue) {
-  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-  function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-  return new (P || (P = Promise))(function (resolve, reject) {
-      function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-      function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-      function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-      step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-}
-
-function __generator(thisArg, body) {
-  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-  function verb(n) { return function (v) { return step([n, v]); }; }
-  function step(op) {
-      if (f) throw new TypeError("Generator is already executing.");
-      while (g && (g = 0, op[0] && (_ = 0)), _) try {
-          if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-          if (y = 0, t) op = [op[0] & 2, t.value];
-          switch (op[0]) {
-              case 0: case 1: t = op; break;
-              case 4: _.label++; return { value: op[1], done: false };
-              case 5: _.label++; y = op[1]; op = [0]; continue;
-              case 7: op = _.ops.pop(); _.trys.pop(); continue;
-              default:
-                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                  if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                  if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                  if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                  if (t[2]) _.ops.pop();
-                  _.trys.pop(); continue;
-          }
-          op = body.call(thisArg, _);
-      } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-      if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-  }
-}
-
-var __createBinding = Object.create ? (function(o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-  }
-  Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-
-function __exportStar(m, o) {
-  for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
-}
-
-function __values(o) {
-  var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-  if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
-      next: function () {
-          if (o && i >= o.length) o = void 0;
-          return { value: o && o[i++], done: !o };
-      }
+var ownKeys = function(o) {
+  ownKeys = Object.getOwnPropertyNames || function (o) {
+    var ar = [];
+    for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+    return ar;
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-
-function __read(o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o), r, ar = [], e;
-  try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  }
-  catch (error) { e = { error: error }; }
-  finally {
-      try {
-          if (r && !r.done && (m = i["return"])) m.call(i);
-      }
-      finally { if (e) throw e.error; }
-  }
-  return ar;
-}
-
-/** @deprecated */
-function __spread() {
-  for (var ar = [], i = 0; i < arguments.length; i++)
-      ar = ar.concat(__read(arguments[i]));
-  return ar;
-}
-
-/** @deprecated */
-function __spreadArrays() {
-  for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-  for (var r = Array(s), k = 0, i = 0; i < il; i++)
-      for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-          r[k] = a[j];
-  return r;
-}
-
-function __spreadArray(to, from, pack) {
-  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-      if (ar || !(i in from)) {
-          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-          ar[i] = from[i];
-      }
-  }
-  return to.concat(ar || Array.prototype.slice.call(from));
-}
-
-function __await(v) {
-  return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var g = generator.apply(thisArg, _arguments || []), i, q = [];
-  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-  function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-  function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-  function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-  function fulfill(value) { resume("next", value); }
-  function reject(value) { resume("throw", value); }
-  function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-  var i, p;
-  return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-  function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var m = o[Symbol.asyncIterator], i;
-  return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-  function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-  function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-  if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-  return cooked;
-};
-
-var __setModuleDefault = Object.create ? (function(o, v) {
-  Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-  o["default"] = v;
+  return ownKeys(o);
 };
 
 function __importStar(mod) {
   if (mod && mod.__esModule) return mod;
   var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
   __setModuleDefault(result, mod);
   return result;
 }
@@ -4030,16 +3893,18 @@ function __classPrivateFieldIn(state, receiver) {
 function __addDisposableResource(env, value, async) {
   if (value !== null && value !== void 0) {
     if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
-    var dispose;
+    var dispose, inner;
     if (async) {
-        if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
-        dispose = value[Symbol.asyncDispose];
+      if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+      dispose = value[Symbol.asyncDispose];
     }
     if (dispose === void 0) {
-        if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
-        dispose = value[Symbol.dispose];
+      if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+      dispose = value[Symbol.dispose];
+      if (async) inner = dispose;
     }
     if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+    if (inner) dispose = function() { try { inner.call(this); } catch (e) { return Promise.reject(e); } };
     env.stack.push({ value: value, dispose: dispose, async: async });
   }
   else if (async) {
@@ -4058,20 +3923,34 @@ function __disposeResources(env) {
     env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
     env.hasError = true;
   }
+  var r, s = 0;
   function next() {
-    while (env.stack.length) {
-      var rec = env.stack.pop();
+    while (r = env.stack.pop()) {
       try {
-        var result = rec.dispose && rec.dispose.call(rec.value);
-        if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
+        if (!r.async && s === 1) return s = 0, env.stack.push(r), Promise.resolve().then(next);
+        if (r.dispose) {
+          var result = r.dispose.call(r.value);
+          if (r.async) return s |= 2, Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
+        }
+        else s |= 1;
       }
       catch (e) {
-          fail(e);
+        fail(e);
       }
     }
+    if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
     if (env.hasError) throw env.error;
   }
   return next();
+}
+
+function __rewriteRelativeImportExtension(path, preserveJsx) {
+  if (typeof path === "string" && /^\.\.?\//.test(path)) {
+      return path.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function (m, tsx, d, ext, cm) {
+          return tsx ? preserveJsx ? ".jsx" : ".js" : d && (!ext || !cm) ? m : (d + ext + "." + cm.toLowerCase() + "js");
+      });
+  }
+  return path;
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -4080,6 +3959,10 @@ function __disposeResources(env) {
   __rest,
   __decorate,
   __param,
+  __esDecorate,
+  __runInitializers,
+  __propKey,
+  __setFunctionName,
   __metadata,
   __awaiter,
   __generator,
@@ -4102,6 +3985,7 @@ function __disposeResources(env) {
   __classPrivateFieldIn,
   __addDisposableResource,
   __disposeResources,
+  __rewriteRelativeImportExtension,
 });
 
 
@@ -4176,7 +4060,7 @@ function __disposeResources(env) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 /*!*****************************************************!*\
@@ -4192,7 +4076,7 @@ var _app = __webpack_require__(/*! ./app */ "../modules/element-manager/assets/j
 (0, _domReady.default)(function () {
   var htmlOutput = document.getElementById('elementor-element-manager-wrap');
   if (htmlOutput) {
-    (0, _element.render)( /*#__PURE__*/_react.default.createElement(_app.App, null), htmlOutput);
+    (0, _element.render)(/*#__PURE__*/_react.default.createElement(_app.App, null), htmlOutput);
   }
 });
 })();
